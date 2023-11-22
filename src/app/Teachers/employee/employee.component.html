@@ -1,0 +1,23 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Employee ID</th>
+        <th>Job Title</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allEmployees">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.employeeId }}</td>
+        <td>{{ item.jobTitle }}</td>
+        <td>{{ item.department }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

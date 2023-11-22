@@ -1,0 +1,27 @@
+.error-container {
+    text-align: center;
+  }
+  
+  .error-code {
+    font-size: 8em;
+    color: #333;
+    margin: 0;
+  }
+  
+  .error-message {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 0.5em;
+  }
+  
+  .back-to-home {
+    margin-top: 1em;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .back-to-home:hover {
+    text-decoration: underline;
+  }
+  

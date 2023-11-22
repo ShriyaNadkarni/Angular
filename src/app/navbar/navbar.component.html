@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <a [routerLink]="['/home']" routerLinkActive="active-link" >Home</a>
+    <a [routerLink]="['students/student']" routerLinkActive="active-link">Student</a>
+    <a [routerLink]="['students/studentdetails']" routerLinkActive="active-link">StudentDetails</a>
+    <a [routerLink]="['/course']" routerLinkActive="active-link">Course</a>
+    
+    
+    <!-- <a routerLink='/department' routerLinkActive="active-link" >Department</a> -->
+<a routerLink="/department/it" routerLinkActive="active-link">IT</a>
+<a routerLink="/department/computer" routerLinkActive="active-link">Computer</a>
+    
+
+    <a [routerLink]="['/users/list']" routerLinkActive="active-link" >User List</a>
+    <a [routerLink]="['/users/login']" routerLinkActive="active-link" >User login</a>
+
+    <!-- <a [routerLink]="['/lang']" routerLinkActive="active-link" >Languages</a> -->
+<a [routerLink]="['/employees']" routerLinkActive="router-link-active" >Employee</a>
+</nav>

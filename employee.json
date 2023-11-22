@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "gender": "Male",
+      "employeeId": "EMP001",
+      "jobTitle": "Software Engineer",
+      "department": "Engineering"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "gender": "Female",
+      "employeeId": "EMP002",
+      "jobTitle": "Marketing Specialist",
+      "department": "Marketing"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "gender": "Male",
+      "employeeId": "EMP003",
+      "jobTitle": "Financial Analyst",
+      "department": "Finance"
+    },
+    {
+      "id": 4,
+      "name": "Alice Brown",
+      "gender": "Female",
+      "employeeId": "EMP004",
+      "jobTitle": "HR Manager",
+      "department": "Human Resources"
+    },
+    {
+      "id": 5,
+      "name": "Chris Lee",
+      "gender": "Female",
+      "employeeId": "EMP005",
+      "jobTitle": "UX Designer",
+      "department": "Design"
+    },
+    {
+      "id": 6,
+      "name": "Alex Johnson",
+      "gender": "Male",
+      "employeeId": "EMP006",
+      "jobTitle": "Software Engineer",
+      "department": "Engineering"
+    }
+  ]
+}

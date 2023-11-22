@@ -1,0 +1,5 @@
+{
+    "/api/v1/*" : "/$1",
+    "/courses/:category" : "/courses?category=:category",
+    "/reviews/:rating" : "/reviews?rating=:rating"
+}

@@ -1,0 +1,19 @@
+<div>
+    <form [formGroup]="addLanguages" (ngSubmit)="create()" >
+        <label>Course Title</label> : 
+        <input type="text" formControlName="title"><br>
+        <label >Description</label> :
+        <input type="text" formControlName="description"><br>
+        <label>Rating</label> :
+        <input type="number" formControlName="rating"> <br>
+        <label>Comments</label> : 
+        <input type="text" formControlName="comment"> <br>
+        <button type="submit">Add</button>
+    </form>
+
+    <br>
+    <br>
+    <a [routerLink]="['/lang']" routerLinkActive="active-link" ><button>Go back to lang</button></a>
+</div>
+
+
