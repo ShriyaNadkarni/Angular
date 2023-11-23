@@ -9,12 +9,14 @@ import { Employee } from '../employee';
 })
 export class EmployeeComponent implements OnInit{
 allEmployees:Employee[]=[];
+// allEmployeesPost:Employee[]=[];
 
 constructor(private eservice:EmployeeService){}
 
 
 ngOnInit(): void {
-  this.getDetails()
+  this.getDetails();
+ // this.postDetails();
 }
 
 getDetails(){
@@ -23,5 +25,16 @@ getDetails(){
     this.allEmployees=data;
   })
 }
+
+
+
+
+
+
+// postDetails(){
+//   this.eservice.postDetails().subscribe((result)=>{
+//     console.log(result);
+//   })
+// }
 
 }

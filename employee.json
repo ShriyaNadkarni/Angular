@@ -47,6 +47,22 @@
       "employeeId": "EMP006",
       "jobTitle": "Software Engineer",
       "department": "Engineering"
+    },
+    {
+      "id": 7,
+      "name": "Shriya Nadkarni",
+      "gender": "Female",
+      "employeeId": "EMP007",
+      "jobTitle": "Software Engineer",
+      "department": "Engineering"
+    },
+    {
+      "id": 8,
+      "name": "Himanshu Nadkarni",
+      "gender": "Male",
+      "jobTitle": "Software Engineer",
+      "department": "Engineer",
+      "employeeId": "EMP008"
     }
   ]
 }

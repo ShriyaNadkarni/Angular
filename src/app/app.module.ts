@@ -17,10 +17,11 @@ import { LanguagesComponent } from './lang/languages/languages.component';
 import { LserviceService } from './lang/lservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLangComponent } from './lang/add-lang/add-lang.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmployeeService } from './Teachers/employee.service';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
+import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
 
 
 @NgModule({
@@ -37,13 +38,15 @@ import { EmployeeComponent } from './Teachers/employee/employee.component';
     Comp2Component,
     LanguagesComponent,
     AddLangComponent,
-EmployeeComponent
+EmployeeComponent,
+AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [MessageService,NumlistService,LserviceService,EmployeeService],
   bootstrap: [AppComponent]

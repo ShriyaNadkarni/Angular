@@ -1,3 +1,7 @@
+<h2>CRUD Operation</h2>
+<a [routerLink]="['/add-emp']" routerLinkActive="active-link" ><button>Add More</button></a>
+<br>
+<br>
 <table>
     <thead>
       <tr>
@@ -7,6 +11,7 @@
         <th>Employee ID</th>
         <th>Job Title</th>
         <th>Department</th>
+        <th>Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +22,10 @@
         <td>{{ item.employeeId }}</td>
         <td>{{ item.jobTitle }}</td>
         <td>{{ item.department }}</td>
+        <td><button >Edit</button></td>
       </tr>
     </tbody>
   </table>
   
+
+  <!-- (click)="onEditClicked(item.id)" -->

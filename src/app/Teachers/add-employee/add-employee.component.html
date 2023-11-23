@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="EmployeeForm" (ngSubmit)="postData(EmployeeForm)">
+        <label>Id :</label>
+        <input type="number" formControlName="id"><br>
+        <label>Name :</label>
+        <input type="text" formControlName="name" ><br>
+        <label>Gender :</label>
+        <input type="text"  formControlName="gender"> <br>
+        <label>EmployeeId :</label>
+        <input type="text" formControlName="employeeId"><br>
+        <label>Job Title :</label>
+        <input type="text" formControlName="jobTitle"> <br>
+        <label>Department :</label>
+        <input type="text" formControlName="department"><br>
+        <button>Submit</button>
+    </form>
+</div>
