@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './Teachers/employee.service';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
 import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.compo
     LanguagesComponent,
     AddLangComponent,
 EmployeeComponent,
-AddEmployeeComponent
+AddEmployeeComponent,
+EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

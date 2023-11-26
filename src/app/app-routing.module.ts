@@ -10,6 +10,7 @@ import { LanguagesComponent } from './lang/languages/languages.component';
 import { AddLangComponent } from './lang/add-lang/add-lang.component';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
 import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'add-lang',component:AddLangComponent},
   {path:'employees',component:EmployeeComponent},
   {path:'add-emp',component:AddEmployeeComponent},
+  {path:'employees/:id/edit',component:EditEmployeeComponent,title:'Employee Edit'},
   {path:'students',  loadChildren: () => import('./Student/student.module').then(mod => mod.StudentModule)},
   {path:'users' ,  loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
   { path: '**', component: NotfoundComponent }

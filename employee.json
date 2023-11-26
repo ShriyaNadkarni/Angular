@@ -63,6 +63,14 @@
       "jobTitle": "Software Engineer",
       "department": "Engineer",
       "employeeId": "EMP008"
+    },
+    {
+      "id": 9,
+      "name": "Ruby Nadkarni",
+      "gender": "Female",
+      "jobTitle": "CEO",
+      "department": "Head",
+      "employeeId": "EMP00"
     }
   ]
 }

@@ -22,7 +22,7 @@
         <td>{{ item.employeeId }}</td>
         <td>{{ item.jobTitle }}</td>
         <td>{{ item.department }}</td>
-        <td><button >Edit</button></td>
+        <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit" routerLinkActive="active-link" >Edit</button></td>
       </tr>
     </tbody>
   </table>

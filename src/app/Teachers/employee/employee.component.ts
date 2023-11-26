@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -9,9 +10,10 @@ import { Employee } from '../employee';
 })
 export class EmployeeComponent implements OnInit{
 allEmployees:Employee[]=[];
+ 
 // allEmployeesPost:Employee[]=[];
 
-constructor(private eservice:EmployeeService){}
+constructor(private eservice:EmployeeService ,private router:Router){}
 
 
 ngOnInit(): void {
@@ -26,7 +28,9 @@ getDetails(){
   })
 }
 
-
+editEmployee(employeeId: number) {
+  this.router.navigate(['/employees', employeeId, 'edit']);
+}
 
 
 
