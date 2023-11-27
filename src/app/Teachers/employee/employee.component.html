@@ -12,6 +12,7 @@
         <th>Job Title</th>
         <th>Department</th>
         <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
         <td>{{ item.jobTitle }}</td>
         <td>{{ item.department }}</td>
         <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit" routerLinkActive="active-link" >Edit</button></td>
+        <td><button (click)="deleteEmployee(item.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>

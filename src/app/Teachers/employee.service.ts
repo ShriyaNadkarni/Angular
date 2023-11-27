@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Employee } from './employee';
 import { Observable } from 'rxjs';
 import { apiUrls } from 'apis/apis';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class EmployeeService {
   employeeData:Employee[] | undefined;
 
  
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
  
 baseUrl:any ="http://localhost:4000"
 
@@ -26,10 +27,8 @@ baseUrl:any ="http://localhost:4000"
         return this.http.get<any>(`${this.baseUrl + apiUrls.employee.emp_list}/${id}`);
       }
  
-
-  updateEmployee(employeeData:Employee[]){
-    
-    return this.http.put("http://localhost:4000/employees", employeeData);
+  updateEmployee(employeeData:Employee){
+    return this.http.put<Employee>("http://localhost:4000/employees/"+employeeData.id, employeeData);
   }
 
   postDetails(addDetails:Employee):Observable<Employee[]>{
@@ -38,17 +37,14 @@ baseUrl:any ="http://localhost:4000"
   }
 
 
-  
- // onEditClicked(id:number){
-    //get the product based on the id
-   // let currentEmployee = this.allEmployees.find((p)=>{return p.id === id})
-   // console.log(currentEmployee);
+  deleteEmployee(employeeId: number): Observable<Employee[]> {
+    const url = `${this.baseUrl}/employees/${employeeId}`;
+    console.log(employeeId)
+  console.log(url)
+    return this.http.delete<Employee[]>(url);
     
-    //populate the form with the product details
-   // this.
-    //change the button value to update product 
-    //}
-
+  }
+ 
     
 }
 

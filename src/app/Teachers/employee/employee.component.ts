@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit{
 allEmployees:Employee[]=[];
+
  
 // allEmployeesPost:Employee[]=[];
 
@@ -23,7 +24,6 @@ ngOnInit(): void {
 
 getDetails(){
   this.eservice.getDetails().subscribe((data)=>{
-    console.log(data);
     this.allEmployees=data;
   })
 }
@@ -33,12 +33,18 @@ editEmployee(employeeId: number) {
 }
 
 
+deleteEmployee(employeeId: number): void {
+  this.eservice.deleteEmployee(employeeId).subscribe(
+    () => {
+      console.log('Employee deleted successfully');
+      this.getDetails(); 
+    },
+    (error) => {
+      console.error('Error deleting employee:', error);
+     
+    }
+  );
+}
 
-
-// postDetails(){
-//   this.eservice.postDetails().subscribe((result)=>{
-//     console.log(result);
-//   })
-// }
 
 }
