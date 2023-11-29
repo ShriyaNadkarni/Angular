@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+// import { apiUrls } from 'apis/apis';
 
 @Component({
   selector: 'app-employee',
@@ -10,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit{
 allEmployees:Employee[]=[];
-
+url = "http://localhost:4000"
  
 // allEmployeesPost:Employee[]=[];
 
-constructor(private eservice:EmployeeService ,private router:Router){}
+constructor(private eservice:EmployeeService ,private router:Router,private http: HttpClient){}
 
 
 ngOnInit(): void {
@@ -32,19 +34,67 @@ editEmployee(employeeId: number) {
   this.router.navigate(['/employees', employeeId, 'edit']);
 }
 
-
-deleteEmployee(employeeId: number): void {
-  this.eservice.deleteEmployee(employeeId).subscribe(
-    () => {
-      console.log('Employee deleted successfully');
-      this.getDetails(); 
-    },
-    (error) => {
-      console.error('Error deleting employee:', error);
-     
-    }
-  );
+deleteEmployee(data:any) {
+   this.eservice.deleteEmployee(data).subscribe(()=>{
+    this.getDetails();
+   },
+   (error)=>{
+    console.log("error");
+   })  }
 }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const url = this.url +"/employees/" +id;
+  // this.http.delete(url).subscribe();
+  // console.log("hello")
+  // console.log(url)
+  // this.getDetails();
+
+
+
+
+
+
+
+
+ // this.eservice.deleteEmployee(employeeId).subscribe(
+  //   () => {
+    
+  //     this.getDetails(); 
+  //   }
+  // );

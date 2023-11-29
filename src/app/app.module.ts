@@ -23,6 +23,10 @@ import { EmployeeService } from './Teachers/employee.service';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
 import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.component';
+import { PromiseComponent } from './promise/promise.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { AllComponent } from './observables/all/all.component';
+import { FormEventComponent } from './observables/form-event/form-event.component';
 
 
 @NgModule({
@@ -41,7 +45,11 @@ import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.co
     AddLangComponent,
 EmployeeComponent,
 AddEmployeeComponent,
-EditEmployeeComponent
+EditEmployeeComponent,
+PromiseComponent,
+ObservablesComponent,
+AllComponent,
+FormEventComponent
   ],
   imports: [
     BrowserModule,

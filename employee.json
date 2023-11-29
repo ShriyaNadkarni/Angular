@@ -1,13 +1,5 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "gender": "Male",
-      "employeeId": "EMP001",
-      "jobTitle": "Software Engineer",
-      "department": "Engineering"
-    },
+  "Employees": [
     {
       "id": 2,
       "name": "Jane Smith",
@@ -15,14 +7,6 @@
       "employeeId": "EMP002",
       "jobTitle": "Marketing Specialist",
       "department": "Marketing"
-    },
-    {
-      "id": 3,
-      "name": "Bob Johnson",
-      "gender": "Male",
-      "employeeId": "EMP003",
-      "jobTitle": "Financial Analyst",
-      "department": "Finance"
     },
     {
       "id": 4,

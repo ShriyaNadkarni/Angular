@@ -1,5 +1,5 @@
 export const apiUrls={
     employee:{
-        emp_list: '/employees'
+        emp_list: '/Employees/'
     }
 }

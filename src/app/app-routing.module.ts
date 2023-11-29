@@ -11,6 +11,9 @@ import { AddLangComponent } from './lang/add-lang/add-lang.component';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
 import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { AllComponent } from './observables/all/all.component';
+import { FormEventComponent } from './observables/form-event/form-event.component';
 
 
 const routes: Routes = [
@@ -25,6 +28,15 @@ const routes: Routes = [
       // { path: '', redirectTo: 'it', pathMatch: 'prefix' }
     ]
   },
+  {
+    path:'observable' ,
+    component:ObservablesComponent,
+    children:[
+    { path:'list', component:AllComponent},
+    { path: 'formevent' , component:FormEventComponent},
+  ]
+},
+
   {path:'course' , component:CourseComponent},
   {path:'course/:id' , component:CourseComponent},
   {path:'lang' ,component:LanguagesComponent},
