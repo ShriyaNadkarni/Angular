@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../employee';
+import { EmployeeService } from '../../../service/employee.service';
+import { Employee } from '../../../interface/employee';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 // import { apiUrls } from 'apis/apis';
 
 @Component({
@@ -34,13 +35,16 @@ editEmployee(employeeId: number) {
   this.router.navigate(['/employees', employeeId, 'edit']);
 }
 
-deleteEmployee(data:any) {
-   this.eservice.deleteEmployee(data).subscribe(()=>{
-    this.getDetails();
-   },
-   (error)=>{
-    console.log("error");
-   })  }
+deleteEmployee(data: any) {
+  const confirmation = window.confirm(`Are you sure you want to delete ${data.name}?`);
+
+  if (confirmation) {
+    this.eservice.deleteEmployee(data).subscribe(() => {
+      this.getDetails();
+    });
+  }
+}
+}
 }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LserviceService } from '../lservice.service';
-import { Course } from '../course';
-import { Reviews } from '../reviews';
+import { LserviceService } from '../../../service/lservice.service';
+import { Course } from '../../../interface/course';
+import { Reviews } from '../../../interface/reviews';
 
 @Component({
   selector: 'app-languages',

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { LserviceService } from '../lservice.service';
+import { LserviceService } from '../../../service/lservice.service';
 import { Router } from '@angular/router';
-import { Course } from '../course';
-import { Reviews } from '../reviews';
+import { Course } from '../../../interface/course';
+import { Reviews } from '../../../interface/reviews';
 
 interface CourseWithLanguage extends Course, Reviews {}
 

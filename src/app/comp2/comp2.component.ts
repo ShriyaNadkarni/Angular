@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NumlistService } from '../numlist.service';
+import { NumlistService } from '../../service/numlist.service';
 
 @Component({
   selector: 'app-comp2',

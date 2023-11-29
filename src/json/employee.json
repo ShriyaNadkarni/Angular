@@ -1,12 +1,36 @@
 {
   "Employees": [
     {
+      "id": 1,
+      "name": "Jane Smith",
+      "gender": "Female",
+      "employeeId": "EMP001",
+      "jobTitle": "Marketing Specialist",
+      "department": "Marketing"
+    },
+    {
       "id": 2,
       "name": "Alice Brown",
       "gender": "Female",
       "employeeId": "EMP002",
       "jobTitle": "HR Manager",
       "department": "Human Resources"
+    },
+    {
+      "id": 3,
+      "name": "Chris Lee",
+      "gender": "Female",
+      "employeeId": "EMP003",
+      "jobTitle": "UX Designer",
+      "department": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Alex Johnson",
+      "gender": "Male",
+      "employeeId": "EMP004",
+      "jobTitle": "Software Engineer",
+      "department": "Engineering"
     },
     {
       "id": 5,
@@ -39,14 +63,6 @@
       "employeeId": "EMP008",
       "jobTitle": "Software Engineer",
       "department": "Engineer"
-    },
-    {
-      "id": 9,
-      "name": "janice",
-      "gender": "Female",
-      "jobTitle": "idk",
-      "department": "something",
-      "employeeId": "EMP00"
     }
   ]
 }

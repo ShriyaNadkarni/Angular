@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 // import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../../../service/employee.service';
 import { Router } from '@angular/router';
-import { Employee } from '../employee';
+import { Employee } from '../../../interface/employee';
 
 
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { HomeComponent } from '../layout/home/home.component';
+import { NotfoundComponent } from '../layout/notfound/notfound.component';
 import { DepartmentComponent } from './department/department.component';
 import { ITComponent } from './it/it.component';
 import { ComputerComponent } from './computer/computer.component';
@@ -44,8 +44,8 @@ const routes: Routes = [
   {path:'employees',component:EmployeeComponent},
   {path:'add-emp',component:AddEmployeeComponent},
   {path:'employees/:id/edit',component:EditEmployeeComponent,title:'Employee Edit'},
-  {path:'students',  loadChildren: () => import('./Student/student.module').then(mod => mod.StudentModule)},
-  {path:'users' ,  loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
+  {path:'students',  loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule)},
+  {path:'users' ,  loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},
   { path: '**', component: NotfoundComponent }
 ];
 
