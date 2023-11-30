@@ -3,6 +3,25 @@
 <a [routerLink]="['/add-emp']" routerLinkActive="active-link" ><button>Add More</button></a>
 <br>
 <br>
+
+
+Filter Here 
+      <input type="text"[(ngModel)]="filterData" placeholder="Enter Name">
+      <button class="btn btn-outline-success" (click)="  filteredResult()" >Filter</button>
+
+<!-- <button class="btn btn-primary" (click)="filterEmployees()">Filter</button> -->
+<!-- <div class="form-row">
+  <div class="col-md-3 mb-3">
+    <label for="nameFilter">Filter by Name:</label>
+    <input type="text" class="form-control" id="nameFilter" [(ngModel)]="filterKeyword" />
+  </div>
+</div>
+<button class="btn btn-primary" (click)="filterEmployees()">Filter</button>
+<br><br> -->
+<!-- filter : <button (click)=" filterEmployees()">Filter</button> -->
+
+<br>
+<br>
 <table>
     <thead>
       <tr>
@@ -30,5 +49,3 @@
     </tbody>
   </table>
   
-
-  <!-- (click)="onEditClicked(item.id)" -->

@@ -1,0 +1,18 @@
+.col-md-4 {
+    float: left;
+    width: 50%; /* This makes each card take up half of the container's width */
+    box-sizing: border-box; /* This includes padding and border in the width calculation */
+}
+
+/* Optional: Add some space between the cards */
+.col-md-4:not(:last-child) {
+    margin-right: 15px;
+}
+
+
+.card {
+    float: left;
+    width: 45%; /* Adjust the width as needed */
+    margin: 10px; /* Adjust the margin as needed for spacing */
+    box-sizing: border-box; /* This includes padding and border in the width calculation */
+}

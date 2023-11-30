@@ -18,7 +18,6 @@ import { LserviceService } from '../service/lservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLangComponent } from './lang/add-lang/add-lang.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { EmployeeService } from '../service/employee.service';
 import { EmployeeComponent } from './Teachers/employee/employee.component';
 import { AddEmployeeComponent } from './Teachers/add-employee/add-employee.component';
@@ -27,6 +26,7 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
+import { LoginComponent } from 'src/core/login/login.component';
 
 
 
@@ -44,14 +44,14 @@ import { FormEventComponent } from './observables/form-event/form-event.componen
     Comp2Component,
     LanguagesComponent,
     AddLangComponent,
-EmployeeComponent,
-AddEmployeeComponent,
-EditEmployeeComponent,
-PromiseComponent,
-ObservablesComponent,
-AllComponent,
-FormEventComponent,
-
+    EmployeeComponent,
+    AddEmployeeComponent,
+    EditEmployeeComponent,
+    PromiseComponent,
+    ObservablesComponent,
+    AllComponent,
+    FormEventComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +60,7 @@ FormEventComponent,
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [MessageService,NumlistService,LserviceService,EmployeeService],
+  providers: [MessageService, NumlistService, LserviceService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,7 @@ import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.co
 import { ObservablesComponent } from './observables/observables.component';
 import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
+import { LoginComponent } from 'src/core/login/login.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
     { path: 'formevent' , component:FormEventComponent},
   ]
 },
-
+{path: 'loginnn' , component:LoginComponent} ,
   {path:'course' , component:CourseComponent},
   {path:'course/:id' , component:CourseComponent},
   {path:'lang' ,component:LanguagesComponent},
