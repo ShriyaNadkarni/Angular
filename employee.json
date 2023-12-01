@@ -2,7 +2,7 @@
   "Employees": [
     {
       "id": 2,
-      "name": "Alice Brown",
+      "name": "Alice",
       "gender": "Female",
       "employeeId": "EMP001",
       "jobTitle": "HR Manager",
@@ -39,14 +39,6 @@
       "employeeId": "EMP008",
       "jobTitle": "Software Engineer",
       "department": "Engineer"
-    },
-    {
-      "id": 9,
-      "name": "janice",
-      "gender": "Female",
-      "jobTitle": "idk",
-      "department": "something",
-      "employeeId": "EMP00"
     }
   ]
 }

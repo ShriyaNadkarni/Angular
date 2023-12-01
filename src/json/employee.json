@@ -2,67 +2,51 @@
   "Employees": [
     {
       "id": 1,
-      "name": "Jane Smith",
-      "gender": "Female",
-      "employeeId": "EMP001",
-      "jobTitle": "Marketing Specialist",
-      "department": "Marketing"
-    },
-    {
-      "id": 2,
       "name": "Alice Brown",
       "gender": "Female",
-      "employeeId": "EMP002",
+      "employeeId": "EMP001",
       "jobTitle": "HR Manager",
       "department": "Human Resources"
     },
     {
-      "id": 3,
-      "name": "Chris Lee",
-      "gender": "Female",
-      "employeeId": "EMP003",
-      "jobTitle": "UX Designer",
-      "department": "Design"
-    },
-    {
-      "id": 4,
-      "name": "Alex Johnson",
-      "gender": "Male",
-      "employeeId": "EMP004",
-      "jobTitle": "Software Engineer",
-      "department": "Engineering"
-    },
-    {
-      "id": 5,
+      "id": 2,
       "name": "Shriya Nadkarni",
       "gender": "Female",
-      "employeeId": "EMP005",
+      "employeeId": "EMP002",
       "jobTitle": "Software Engineer",
       "department": "Engineering"
     },
     {
-      "id": 6,
+      "id": 3,
       "name": "Himanshu Nadkarni",
       "gender": "Male",
       "jobTitle": "Software Engineer",
       "department": "Engineer",
-      "employeeId": "EMP006"
+      "employeeId": "EMP003"
     },
     {
-      "id": 7,
+      "id": 4,
       "name": "Ruby Nadkarni",
       "gender": "Female",
-      "employeeId": "EMP007",
+      "employeeId": "EMP004",
       "jobTitle": "CEO",
       "department": "Head"
     },
     {
-      "id": 8,
+      "id": 5,
       "name": "Mangirish Nadkarni",
       "gender": "Male",
-      "employeeId": "EMP008",
+      "employeeId": "EMP005",
       "jobTitle": "Software Engineer",
       "department": "Engineer"
+    },
+    {
+      "id": 6,
+      "name": "janice",
+      "gender": "Female",
+      "jobTitle": "idk",
+      "department": "something",
+      "employeeId": "EMP006"
     }
   ]
 }

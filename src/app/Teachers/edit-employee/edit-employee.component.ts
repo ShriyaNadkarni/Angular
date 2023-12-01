@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../../../service/employee.service';
 import { Employee } from '../../../interface/employee';
+import { errors } from 'src/errors';
 
 @Component({
   selector: 'app-edit-employee',
@@ -13,6 +14,7 @@ export class EditEmployeeComponent implements OnInit {
   employeeData: Employee | any;
   employeeId: number |any;
   EmployeeForm: FormGroup | any;
+  errors=errors;
 
   constructor(private route: ActivatedRoute, private employeeService: EmployeeService, private fb: FormBuilder,private router:Router) {}
 
@@ -23,10 +25,10 @@ export class EditEmployeeComponent implements OnInit {
         this.employeeData = data;
         console.log(this.employeeData)
         this.EmployeeForm = this.fb.group({
-          id: [this.employeeData.id],  
-          name: [this.employeeData.name, Validators.required],
+          id: [this.employeeData.id],
+          name: [this.employeeData.name, [Validators.required, Validators.minLength(3)]],
           gender: [this.employeeData.gender, Validators.required],
-          employeeId: [this.employeeData.employeeId, Validators.required],
+          employeeId: [this.employeeData.employeeId, [Validators.required, Validators.pattern(/^EMP\d{3}$/)]],
           jobTitle: [this.employeeData.jobTitle, Validators.required],
           department: [this.employeeData.department, Validators.required],
         });
@@ -35,14 +37,16 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   updateEmployee() {
-   
-   this.employeeService.updateEmployee(this.EmployeeForm.value).subscribe((data)=>{
-    this.employeeData = data;
-    console.log(data);
-    this.router.navigate(["employees"]);
-   })
+    this.employeeService.updateEmployee(this.EmployeeForm.value).subscribe((data) => {
+      this.employeeData = data;
+      console.log(data);
+      this.router.navigate(["employees"]);
+    });
   }
 
- 
+  getControl(name:any){
+    return this.EmployeeForm.get(name)
+   }
+  
  
 }

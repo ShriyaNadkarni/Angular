@@ -1,20 +1,49 @@
 <div>
-    <h3>Edit Employee</h3>
-
-    <form  [formGroup]="EmployeeForm" (ngSubmit)="updateEmployee()">
+    <form [formGroup]="EmployeeForm" (ngSubmit)="EmployeeForm.status !== 'INVALID' && updateEmployee()">
         <label>Id :</label>
         <input type="number" formControlName="id"><br>
+
         <label>Name :</label>
-        <input type="text" formControlName="name" ><br>
+        <input type="text" formControlName="name" placeholder="Enter Name" [ngClass]="{error: getControl('name')?.errors && getControl('name')?.touched}"> 
+        <div *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red">
+            <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
+            <small *ngIf="getControl('name')?.errors?.['minlength']">{{errors.error.valid_name}}</small>
+            <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_names}}</small>
+        </div>
+        <br>
+    
         <label>Gender :</label>
-        <input type="text"  formControlName="gender"> <br>
+        <input type="text" formControlName="gender" placeholder="Enter Gender" [ngClass]="{error: getControl('gender')?.errors && getControl('gender')?.touched}">
+        <div *ngIf="getControl('gender')?.errors && getControl('gender')?.touched" style="color: red">
+            <small *ngIf="getControl('gender')?.errors?.['required']">{{errors.error.required}}</small>
+        </div>
+        <br>
+        
+
         <label>EmployeeId :</label>
-        <input type="text" formControlName="employeeId"><br>
+        <input type="text" formControlName="employeeId" placeholder="Enter Employee Id" [ngClass]="{error: getControl('employeeId')?.errors && getControl('employeeId')?.touched}">
+        <div *ngIf="getControl('employeeId')?.errors && getControl('employeeId')?.touched" style="color: red">
+            <small *ngIf="getControl('employeeId')?.errors?.['required']">{{errors.error.required}}</small>
+            <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_emplyId}}</small>
+        </div>
+        <br>
+       
         <label>Job Title :</label>
-        <input type="text" formControlName="jobTitle"> <br>
+        <input type="text" formControlName="jobTitle" placeholder="Enter job Title" [ngClass]="{error: getControl('jobTitle')?.errors && getControl('jobTitle')?.touched}">
+        <div *ngIf="getControl('jobTitle')?.errors && getControl('jobTitle')?.touched" style="color: red">
+            <small *ngIf="getControl('jobTitle')?.errors?.['required']">{{errors.error.required}}</small>
+        </div>
+        <br>
+       
         <label>Department :</label>
-        <input type="text" formControlName="department"><br>
-        <button routerLink="/employees" routerLinkActive="active-link" (click)="updateEmployee()">Update</button>
+        <input type="text" formControlName="department" placeholder="Enter Department" [ngClass]="{error: getControl('department')?.errors && getControl('department')?.touched}">
+        <div *ngIf="getControl('department')?.errors && getControl('department')?.touched" style="color: red">
+            <small *ngIf="getControl('department')?.errors?.['required']">{{errors.error.required}}</small>
+        </div>
+        <br>
+       
+      
+        <button type="submit" [disabled]="EmployeeForm.status === 'INVALID'">Update</button>
         <button routerLink="/employees" routerLinkActive="active-link" >Back</button>
     </form>
 </div>
