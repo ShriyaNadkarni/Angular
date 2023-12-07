@@ -44,7 +44,7 @@ export class EmployeeComponent implements OnInit {
     .pipe(
       map(employees => employees
         .filter(emp => 
-          emp.name == this.filterData || emp.gender == this.filterData || emp.jobTitle === this.filterData || emp.department === this.filterData)),
+          emp.name == this.filterData || emp.gender == this.filterData || emp.jobTitle === this.filterData || emp.department === this.filterData || emp.employeeId === this.filterData)),
         )
       .subscribe((res) => {
         console.log(res);

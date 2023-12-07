@@ -14,12 +14,16 @@ import { EditEmployeeComponent } from './Teachers/edit-employee/edit-employee.co
 import { ObservablesComponent } from './observables/observables.component';
 import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
-import { LoginComponent } from 'src/core/login/login.component';
+import { LoginComponent } from './users/login/login.component';
+//import { AuthenticationGuard } from '../Guards/authentication.guard';
+import { SignupComponent } from './users/signup/signup.component';
+import { AuthenticationGuard } from 'src/Guards/authentication.guard';
+
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard]},
   {
     path: 'department',
     component: DepartmentComponent,
@@ -30,23 +34,25 @@ const routes: Routes = [
     ]
   },
   {
-    path:'observable' ,
-    component:ObservablesComponent,
-    children:[
-    { path:'list', component:AllComponent},
-    { path: 'formevent' , component:FormEventComponent},
-  ]
-},
-{path: 'loginnn' , component:LoginComponent} ,
-  {path:'course' , component:CourseComponent},
-  {path:'course/:id' , component:CourseComponent},
-  {path:'lang' ,component:LanguagesComponent},
-  {path:'add-lang',component:AddLangComponent},
-  {path:'employees',component:EmployeeComponent},
-  {path:'add-emp',component:AddEmployeeComponent},
-  {path:'employees/:id/edit',component:EditEmployeeComponent,title:'Employee Edit'},
-  {path:'students',  loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule)},
-  {path:'users' ,  loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},
+    path: 'observable',
+    component: ObservablesComponent,
+    children: [
+      { path: 'list', component: AllComponent },
+      { path: 'formevent', component: FormEventComponent },
+    ]
+  },
+  
+  {path: 'login' , component:LoginComponent },
+  {path: 'signup' ,component:SignupComponent},
+  { path: 'course', component: CourseComponent },
+  { path: 'course/:id', component: CourseComponent },
+  { path: 'lang', component: LanguagesComponent },
+  { path: 'add-lang', component: AddLangComponent },
+  { path: 'employees', component: EmployeeComponent },
+  { path: 'add-emp', component: AddEmployeeComponent },
+  { path: 'employees/:id/edit', component: EditEmployeeComponent, title: 'Employee Edit' },
+  { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },
+  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },
   { path: '**', component: NotfoundComponent }
 ];
 
@@ -54,8 +60,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-  constructor(){
+export class AppRoutingModule {
+  constructor() {
     console.log('app routing module loaded ..')
   }
 }

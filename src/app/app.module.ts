@@ -26,9 +26,12 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
-import { LoginComponent } from 'src/core/login/login.component';
-
-
+import { GenderPipe } from './pipes/gender.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import {MaterialModule} from 'src/app/material/material.module';
+import {ToastrModule} from 'ngx-toastr';
+import { UsersModule } from 'src/module/users.module';
 
 @NgModule({
   declarations: [
@@ -51,14 +54,21 @@ import { LoginComponent } from 'src/core/login/login.component';
     ObservablesComponent,
     AllComponent,
     FormEventComponent,
-    LoginComponent
+    GenderPipe,
+   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    UsersModule,
+    MaterialModule,
+    ToastrModule.forRoot()
   ],
   providers: [MessageService, NumlistService, LserviceService, EmployeeService],
   bootstrap: [AppComponent]

@@ -38,13 +38,13 @@ Filter Here
     <tbody>
       <tr *ngFor="let item of allEmployees">
         <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.gender }}</td>
+        <td>{{item.gender | gender:item.name |uppercase}}</td>
+        <td>{{ item.gender | uppercase }}</td>
         <td>{{ item.employeeId }}</td>
-        <td>{{ item.jobTitle }}</td>
-        <td>{{ item.department }}</td>
-        <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit" routerLinkActive="active-link" >Edit</button></td>
-        <td><button (click)="deleteEmployee(item.id)">Delete</button></td>
+        <td>{{ item.jobTitle | uppercase }}</td>
+        <td>{{ item.department | uppercase}}</td>
+        <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit" routerLinkActive="active-link"   [ngStyle]="{'background-color': 'green', 'color': 'white'}">Edit</button></td>
+        <td><button (click)="deleteEmployee(item.id)" [ngStyle]="{'background-color': 'red', 'color': 'white'}">Delete</button></td>
       </tr>
     </tbody>
   </table>

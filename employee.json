@@ -14,7 +14,7 @@
       "gender": "Female",
       "employeeId": "EMP005",
       "jobTitle": "Software Engineer",
-      "department": "Engineering"
+      "department": "Engineer"
     },
     {
       "id": 6,
@@ -39,6 +39,21 @@
       "employeeId": "EMP008",
       "jobTitle": "Software Engineer",
       "department": "Engineer"
+    },
+    {
+      "id": 9,
+      "name": "Tom",
+      "gender": "Male",
+      "employeeId": "EMP009",
+      "jobTitle": "UI/UX",
+      "department": "Design"
+    },
+    {
+      "name": "Krishna",
+      "jobTitle": "Design",
+      "department": "Designer",
+      "gender": "male",
+      "id": 10
     }
   ]
 }
