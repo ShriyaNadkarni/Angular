@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MessageService } from '../../service/message.service';
 import { Observable, Subscription, interval } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { Observable, Subscription, interval } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   msg: string = "";
+  userName: string | null = null;
 
   // intervalSubscription: Subscription = new Subscription;
 
@@ -18,6 +20,8 @@ export class HomeComponent implements OnInit {
   // ngOnDestroy(): void {
   //   this.intervalSubscription.unsubscribe();
   // }
+  constructor(private route: ActivatedRoute) { }
+
 
   ngOnInit() {
     // this.msg = this.messageservice.getmessage();
@@ -37,5 +41,9 @@ export class HomeComponent implements OnInit {
     // customObservable.subscribe(data => {
     //   console.log(data);
     // });
+    this.route.queryParams.subscribe(params => {
+      this.userName = params['name'] || null;
+    });
   }
-}
+  }
+

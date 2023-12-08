@@ -13,23 +13,25 @@ export class AuthenticationGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     const name = next.queryParamMap.get('name');
-    const jobTitle = next.queryParamMap.get('jobTitle');
-  
-    if (name && jobTitle) {
-      const user = this.authService.getUserByNameAndJobTitle(name, jobTitle);
-  
+    const password = next.queryParamMap.get('password');
+   
+    if (name && password) {
+      const user = this.authService.getUserByNameAndJobTitle(name, password);
+
       if (user) {
-        console.log(user);
-        return true; 
+        console.log("working finally!");
+        return true;
       } else {
-        console.log("idk")
+        console.log("idk");
         this.router.navigate(['/login']);
-        return false; 
+        return false;
       }
+    } else if (name) {
+      return true;
     } else {
-      console.log("missing parameters")
-      return false; 
+      console.log("missing parameters");
+      this.router.navigate(['/login']);
+      return false;
     }
   }
-  
 }

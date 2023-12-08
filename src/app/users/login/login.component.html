@@ -4,27 +4,38 @@
       <h1>Login </h1>
     </mat-card-header>
     <mat-card-content>
-      <form class="example-form"   [formGroup]="loginForm" (ngSubmit)="login()">
+      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
         <mat-form-field class="example-full-width">
           <mat-label>User Name:</mat-label>
-          <input matInput placeholder="Enter your name" formControlName="name">
+          <input matInput placeholder="Enter your name" formControlName="name"
+            [ngClass]="{error: getControl('name')?.errors && getControl('name')?.touched}">
         </mat-form-field>
+        <div *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red">
+          <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
+          <small *ngIf="getControl('name')?.errors?.['minlength']">{{errors.error.valid_name}}</small>
+          <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_names}}</small>
+        </div>
         <br>
+
         <mat-form-field class="example-full-width">
-          <mat-label>Job Title:</mat-label>
-          <input matInput placeholder="Enter your Job Title" formControlName="jobTitle">
+          <mat-label>Password:</mat-label>
+          <input matInput placeholder="Enter your Password" formControlName="password"
+            [ngClass]="{error: getControl('password')?.errors && getControl('password')?.touched}">
         </mat-form-field>
+        <div *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red">
+          <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>
+        </div>
         <br>
-    
+
         <button mat-raised-button color="primary">Login</button>
         <a [routerLink]="['/signup']"><button mat-raised-button color="accent">New ?</button></a>
-  
+
       </form>
     </mat-card-content>
   </mat-card>
-  </div>
+</div>
 
- 
+
 
 
 
@@ -110,5 +121,3 @@
     <button mat-button color="accent" type="submit" >Login</button>
     <a routerLink="/signup" mat-raised-button color="accent">New User?</a>
   </form> -->
-   
-

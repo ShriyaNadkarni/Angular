@@ -17,33 +17,33 @@ export class AddEmployeeComponent {
   id: number = 0;
   gender: string = "";
   name: string = "";
-  jobTitle: string = "";
-  department: string = "";
-  employeeId: string = "";
+  education: string = "";
+  phonenumber: string = "";
+  email: string = "";
   errors = errors;
 
 
-  constructor(private frmBuilder: FormBuilder, private eservice:EmployeeService,  private router: Router) {
+  constructor(private frmBuilder: FormBuilder, private eservice: EmployeeService, private router: Router) {
     this.EmployeeForm = frmBuilder.group({
       id: new FormControl(),
-      name: new FormControl('', [Validators.required , Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
       gender: new FormControl('', [Validators.required]),
-      jobTitle: new FormControl('', [Validators.required]),
-      department: new FormControl('', [Validators.required]),
-      employeeId: new FormControl('', [Validators.required,Validators.pattern(/^EMP\d{3}$/)])
+      education: new FormControl('', [Validators.required]),
+      phonenumber: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email])
     })
   }
 
-  postData(EmployeeForm:FormGroup){
+  postData(EmployeeForm: FormGroup) {
     console.log(EmployeeForm.value);
-    this.eservice.postDetails((this.EmployeeForm.value as Employee)).subscribe(()=>{
-    this.router.navigate(['employees']);
+    this.eservice.postDetails((this.EmployeeForm.value as Employee)).subscribe(() => {
+      this.router.navigate(['employees']);
     })
   }
 
 
- getControl(name:any){
-  return this.EmployeeForm.get(name)
- }
+  getControl(name: any) {
+    return this.EmployeeForm.get(name)
+  }
 
 }

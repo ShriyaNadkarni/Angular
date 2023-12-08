@@ -1,51 +1,41 @@
-
 <h2>CRUD Operation</h2>
-<a [routerLink]="['/add-emp']" routerLinkActive="active-link" ><button>Add More</button></a>
+<a [routerLink]="['/add-emp']" routerLinkActive="active-link"><button>Add More</button></a>
 <br>
 <br>
 
 
-Filter Here 
-      <input type="text"[(ngModel)]="filterData" placeholder="Enter criteria to search...">
-      <button  id="filter" class="btn btn-outline-success" (click)="  filteredResult()" >Filter</button>
+Filter Here
+<input type="text" [(ngModel)]="filterData" placeholder="Enter criteria to search...">
+<button id="filter" class="btn btn-outline-success" (click)="  filteredResult()">Filter</button>
 
-<!-- <button class="btn btn-primary" (click)="filterEmployees()">Filter</button> -->
-<!-- <div class="form-row">
-  <div class="col-md-3 mb-3">
-    <label for="nameFilter">Filter by Name:</label>
-    <input type="text" class="form-control" id="nameFilter" [(ngModel)]="filterKeyword" />
-  </div>
-</div>
-<button class="btn btn-primary" (click)="filterEmployees()">Filter</button>
-<br><br> -->
-<!-- filter : <button (click)=" filterEmployees()">Filter</button> -->
 
 <br>
 <br>
 <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Employee ID</th>
-        <th>Job Title</th>
-        <th>Department</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of allEmployees">
-        <td>{{ item.id }}</td>
-        <td>{{item.gender | gender:item.name |uppercase}}</td>
-        <td>{{ item.gender | uppercase }}</td>
-        <td>{{ item.employeeId }}</td>
-        <td>{{ item.jobTitle | uppercase }}</td>
-        <td>{{ item.department | uppercase}}</td>
-        <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit" routerLinkActive="active-link"   [ngStyle]="{'background-color': 'green', 'color': 'white'}">Edit</button></td>
-        <td><button (click)="deleteEmployee(item.id)" [ngStyle]="{'background-color': 'red', 'color': 'white'}">Delete</button></td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Phone.No</th>
+      <th>Email</th>
+      <th>Education</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allEmployees">
+      <td>{{ item.id }}</td>
+      <td>{{item.gender | gender:item.name |uppercase}}</td>
+      <td>{{ item.gender | uppercase }}</td>
+      <td>{{ item.phonenumber }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.education | uppercase}}</td>
+      <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit"
+          routerLinkActive="active-link" [ngStyle]="{'background-color': 'green', 'color': 'white'}">Edit</button></td>
+      <td><button (click)="deleteEmployee(item.id)"
+          [ngStyle]="{'background-color': 'red', 'color': 'white'}">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

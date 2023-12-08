@@ -14,16 +14,16 @@ import { filter, map } from 'rxjs';
 export class EmployeeComponent implements OnInit {
   allEmployees: Employee[] = [];
   filteredEmployees: Employee[] = [];
-  filterData: string = '';
- 
-  
+  filterData: any;
 
-  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient) {}
+
+
+  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient) { }
 
 
   ngOnInit(): void {
     this.getDetails();
-      // this.filteredResult();
+    // this.filteredResult();
   }
 
   getDetails() {
@@ -33,24 +33,22 @@ export class EmployeeComponent implements OnInit {
   }
 
 
-  filteredResult(){
-    if(this.filterData === "")
-    {
+  filteredResult() {
+    if (this.filterData === "") {
       this.getDetails();
     }
-    else
-    {
-    this.eservice.getDetails()  
-    .pipe(
-      map(employees => employees
-        .filter(emp => 
-          emp.name == this.filterData || emp.gender == this.filterData || emp.jobTitle === this.filterData || emp.department === this.filterData || emp.employeeId === this.filterData)),
+    else {
+      this.eservice.getDetails()
+        .pipe(
+          map(employees => employees
+            .filter(emp =>
+              emp.name == this.filterData || emp.gender == this.filterData || emp.email === this.filterData || emp.education === this.filterData || emp.phonenumber === this.filterData)),
         )
-      .subscribe((res) => {
-        console.log(res);
-        this.allEmployees = res;
-      })
-  }
+        .subscribe((res) => {
+          console.log(res);
+          this.allEmployees = res;
+        })
+    }
 
 
   }
@@ -59,7 +57,7 @@ export class EmployeeComponent implements OnInit {
 
 
 
-  
+
 
 
 
@@ -71,7 +69,7 @@ export class EmployeeComponent implements OnInit {
   //   console.log("its clicked")
   // }
 
-//idk
+  //idk
   // filterEmployees() {
   //   this.eservice.getDetails()
   //     .pipe(
@@ -87,7 +85,7 @@ export class EmployeeComponent implements OnInit {
   //     emp.name.toLowerCase().includes(this.filterKeyword.toLowerCase())
   //   );
   // }
-  
+
 
   // matchesFilterCriteria(employee: Employee): boolean {
   //   const keywordLower = this.filterKeyword.toLowerCase();

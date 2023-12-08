@@ -29,9 +29,10 @@ import { FormEventComponent } from './observables/form-event/form-event.componen
 import { GenderPipe } from './pipes/gender.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import {MaterialModule} from 'src/app/material/material.module';
-import {ToastrModule} from 'ngx-toastr';
+import { MaterialModule } from 'src/app/material/material.module';
+import { ToastrModule } from 'ngx-toastr';
 import { UsersModule } from 'src/module/users.module';
+//import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -55,8 +56,7 @@ import { UsersModule } from 'src/module/users.module';
     AllComponent,
     FormEventComponent,
     GenderPipe,
-   
-
+    //FilterPipe
   ],
   imports: [
     BrowserModule,

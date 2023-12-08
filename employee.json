@@ -1,58 +1,93 @@
 {
   "Employees": [
     {
-      "id": 2,
+      "id": 1,
       "name": "Alice",
       "gender": "Female",
-      "employeeId": "EMP001",
-      "jobTitle": "HR Manager",
-      "department": "Human Resources"
+      "email": "abc@gmail.com",
+      "education": "Frontend Developer",
+      "phonenumber": 123456789,
+      "password": "abcd"
+    },
+    {
+      "id": 2,
+      "name": "Shriya Nadkarni",
+      "gender": "Female",
+      "email": "abc@gmail.com",
+      "education": "Backend Developer",
+      "phonenumber": "1234",
+      "password": "abcd"
+    },
+    {
+      "id": 3,
+      "name": "Himanshu Nadkarni",
+      "gender": "Male",
+      "education": "Full stack Developer",
+      "phonenumber": 123456789,
+      "email": "abc@gmail.com",
+      "password": "abcd"
+    },
+    {
+      "id": 4,
+      "name": "Ruby Nadkarni",
+      "gender": "Female",
+      "email": "abc@gmail.com",
+      "education": "Database Management",
+      "phonenumber": 123456789,
+      "password": "abcd"
     },
     {
       "id": 5,
-      "name": "Shriya Nadkarni",
-      "gender": "Female",
-      "employeeId": "EMP005",
-      "jobTitle": "Software Engineer",
-      "department": "Engineer"
+      "name": "Mangirish Nadkarni",
+      "gender": "Male",
+      "email": "abc@gmail.com",
+      "education": "UI/UX",
+      "phonenumber": 123456789,
+      "password": "abcd"
     },
     {
       "id": 6,
-      "name": "Himanshu Nadkarni",
+      "name": "Tom",
       "gender": "Male",
-      "jobTitle": "Software Engineer",
-      "department": "Engineer",
-      "employeeId": "EMP006"
+      "email": "abc@gmail.com",
+      "education": "Frontend Developer",
+      "phonenumber": 123456789,
+      "password": "abcd"
     },
     {
       "id": 7,
-      "name": "Ruby Nadkarni",
-      "gender": "Female",
-      "employeeId": "EMP007",
-      "jobTitle": "CEO",
-      "department": "Head"
+      "name": "Krishna",
+      "gender": "male",
+      "email": "abc@gmail.com",
+      "education": "Backend Developer",
+      "phonenumber": 123456789,
+      "password": "abcd"
     },
     {
       "id": 8,
-      "name": "Mangirish Nadkarni",
-      "gender": "Male",
-      "employeeId": "EMP008",
-      "jobTitle": "Software Engineer",
-      "department": "Engineer"
+      "name": "Girish Nadkarni",
+      "gender": "male",
+      "email": "abc@gmail.com",
+      "education": "Database Management",
+      "phonenumber": 123456789,
+      "password": "abcd"
     },
     {
       "id": 9,
-      "name": "Tom",
-      "gender": "Male",
-      "employeeId": "EMP009",
-      "jobTitle": "UI/UX",
-      "department": "Design"
+      "name": "Siya",
+      "gender": "Female",
+      "email": "siya@gmail.com",
+      "education": "Full stack Developer",
+      "phonenumber": "123489",
+      "password": "abcd"
     },
     {
-      "name": "Krishna",
-      "jobTitle": "Design",
-      "department": "Designer",
-      "gender": "male",
+      "name": "jerry",
+      "education": "UI/UX",
+      "phonenumber": "12345677",
+      "gender": "female",
+      "email": "idk@gmail.com",
+      "password": "qwerty",
       "id": 10
     }
   ]

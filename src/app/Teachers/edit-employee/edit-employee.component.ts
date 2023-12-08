@@ -12,11 +12,11 @@ import { errors } from 'src/errors';
 })
 export class EditEmployeeComponent implements OnInit {
   employeeData: Employee | any;
-  employeeId: number |any;
+  employeeId: number | any;
   EmployeeForm: FormGroup | any;
-  errors=errors;
+  errors = errors;
 
-  constructor(private route: ActivatedRoute, private employeeService: EmployeeService, private fb: FormBuilder,private router:Router) {}
+  constructor(private route: ActivatedRoute, private employeeService: EmployeeService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -26,13 +26,13 @@ export class EditEmployeeComponent implements OnInit {
         console.log(this.employeeData)
         this.EmployeeForm = this.fb.group({
           id: [this.employeeData.id],
-          name: [this.employeeData.name, [Validators.required, Validators.minLength(3),Validators.pattern(/^[a-zA-Z ]*$/)]],
+          name: [this.employeeData.name, [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]],
           gender: [this.employeeData.gender, Validators.required],
-          employeeId: [this.employeeData.employeeId, [Validators.required, Validators.pattern(/^EMP\d{3}$/)]],
-          jobTitle: [this.employeeData.jobTitle, Validators.required],
-          department: [this.employeeData.department, Validators.required],
+          email: [this.employeeData.email, [Validators.required, Validators.email]],
+          education: [this.employeeData.education, Validators.required],
+          phonenumber: [this.employeeData.phonenumber, Validators.required],
         });
-    });
+      });
     });
   }
 
@@ -44,9 +44,9 @@ export class EditEmployeeComponent implements OnInit {
     });
   }
 
-  getControl(name:any){
+  getControl(name: any) {
     return this.EmployeeForm.get(name)
-   }
-  
- 
+  }
+
+
 }
