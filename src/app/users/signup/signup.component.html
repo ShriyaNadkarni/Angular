@@ -51,6 +51,7 @@
         </mat-form-field>
         <div *ngIf="getControl('phonenumber')?.errors && getControl('phonenumber')?.touched" style="color: red">
           <small *ngIf="getControl('phonenumber')?.errors?.['required']">{{errors.error.required}}</small>
+          <small *ngIf="getControl('phonenumber')?.errors?.['pattern']">Only Numbers are allowed </small>
         </div>
         <br>
 
@@ -62,25 +63,28 @@
         </mat-form-field>
         <div *ngIf="getControl('email')?.errors && getControl('email')?.touched" style="color: red">
           <small *ngIf="getControl('email')?.errors?.['required']">{{errors.error.required}}</small>
-          <small *ngIf="getControl('email')?.errors?.['pattern']">{{errors.error.valid_email}}</small>
+          <small *ngIf="getControl('email')?.errors?.['email']">{{errors.error.valid_email}}</small>
         </div>
         <br>
 
 
         <mat-form-field class="example-full-width">
-          <mat-label>Password:</mat-label>
-          <input matInput placeholder="Enter your Password" formControlName="password"
-            [ngClass]="{error: getControl('password')?.errors && getControl('password')?.touched}">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
         <div *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red">
           <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>
         </div>
         <br>
 
+        <button mat-raised-button type="reset"  (click)="Reset()" class="button-margin">Reset</button>
+        <button mat-raised-button color="primary" class="button-margin">Submit</button>
+        <a [routerLink]="['/login']"><button mat-raised-button color="accent" class="button-margin">Back to login</button></a>
 
-        <button mat-raised-button color="primary">Submit</button>
-        <a [routerLink]="['/login']"><button mat-raised-button color="accent">Back to login</button></a>
-
+        
       </form>
     </mat-card-content>
   </mat-card>

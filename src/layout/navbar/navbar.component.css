@@ -1,8 +1,9 @@
 /* navbar.component.css */
 
 .navbar {
-    background-color: #333;
+    background-color: #574d4d;
     overflow: hidden;
+    width: 100%;
   }
   
   .navbar a {
@@ -15,12 +16,18 @@
   }
   
   .navbar a:hover {
-    background-color: #ddd;
+    /* background-color: #ddd; */
     color: black;
   }
   
   .navbar a.active-link {
     background-color: #4CAF50;
     color: white;
+  }
+
+  .logout-button {
+    background-color: #ff0000 !important; 
+    color: #ffffff !important; 
+    font-weight: bold !important; 
   }
   

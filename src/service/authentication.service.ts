@@ -8,61 +8,59 @@ import { Employee } from 'src/interface/employee';
 })
 export class AuthenticationService extends EmployeeService {
   private employees: Employee[] = [];
+  userId: number | null = null;
   private authenticatedUser: Employee | null = null;
 
-  
+  getId(id: number): Observable<any> {
+    return super.getEmployeeById(id);
+  }
+
+  private islogged: boolean = false;
+
+  getIsLogged(): boolean {
+    return this.islogged;
+  }
+
+  setIsLogged(value: boolean): void {
+    this.islogged = value;
+  }
+
   getAllEmployees(): Observable<Employee[]> {
-    console.log('in getall function (AuthenticationService)');
-    return super.getDetails(); 
+    return super.getDetails();
   }
 
   setEmployees(employees: Employee[]): void {
     this.employees = employees;
   }
 
+  logout(): void {
+    this.islogged = false;
+    this.authenticatedUser = null; 
+  }
+
+  getUserDetails(): Employee | null {
+    return this.authenticatedUser;
+  }
+
+  setUserDetails(user: Employee): void {
+    this.authenticatedUser = user;
+  }
+
   getUserByNameAndJobTitle(name: string, password: string): Employee | undefined {
     console.log('Entered getUserByNameAndJobTitle:', name, password);
-    console.log('All Employees:', this.employees);
-    return this.employees.find((user) => {
-      console.log('Checking user:', user);
+    const user = this.employees.find((user) => {
       return user.name.trim() === name.trim() && user.password.trim() === password.trim();
     });
+
+ 
+    if (user) {
+      this.setUserDetails(user);
+    }
+
+    return user;
   }
 
   signUp(data: any): Observable<any> {
-    return super.postDetails(data);  
+    return super.postDetails(data);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// isAuthenticated(): boolean {
-//   return this.authenticatedUser !== null;
-// }
-
-// authenticateUser(user: Employee): void {
-//   this.authenticatedUser = user;
-//   console.log('User authenticated:', user);
-// }
-
-// logout(): void {
-//   this.authenticatedUser = null;
-// }

@@ -14,14 +14,16 @@ export class SignupComponent {
   constructor(private bulider: FormBuilder, private toaster: ToastrService, private auth: AuthenticationService, private router: Router) { }
 
   errors =errors ;
+  hide = true; 
   
   signupForm = this.bulider.group({
-    name: this.bulider.control('', Validators.required),
+    name: this.bulider.control('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
     education: this.bulider.control('', Validators.required),
-    phonenumber: this.bulider.control('', [Validators.required,Validators.pattern(/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/)]),
+    // phonenumber: this.bulider.control('',[ Validators.required,Validators.pattern("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/")]),
+    phonenumber: this.bulider.control('', Validators.required),
     gender: this.bulider.control('male', Validators.required),
     email: this.bulider.control('', [Validators.required, Validators.email]),
-    password: this.bulider.control('', Validators.required)
+    password: this.bulider.control('', [Validators.required,Validators.maxLength(10)])
   });
 
   signup() {
@@ -34,6 +36,7 @@ export class SignupComponent {
     }
     else {
       this.toaster.warning('Please enter valid data ');
+      
     }
   }
 
@@ -42,5 +45,9 @@ export class SignupComponent {
   }
 
 
+  Reset()
+  {
+    this.signupForm.reset();
+  }
 
 }

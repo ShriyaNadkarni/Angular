@@ -1,18 +1,25 @@
-<nav class="navbar">
+<!-- <mat-toolbar *ngIf="isAuthenticated()"> -->
+  <mat-toolbar  *ngIf="isAuthenticated()">
+<nav class="navbar" >
     <a [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
     <a [routerLink]="['students/student']" routerLinkActive="active-link">Student</a>
     <a [routerLink]="['students/studentdetails']" routerLinkActive="active-link">StudentDetails</a>
     <a [routerLink]="['/course']" routerLinkActive="active-link">Course</a>
     <a routerLink="/department/it" routerLinkActive="active-link">IT</a>
     <a routerLink="/department/computer" routerLinkActive="active-link">Computer</a>
-    <a [routerLink]="['/login']" routerLinkActive="active-link">login</a>
     <a [routerLink]="['/employees']" routerLinkActive="active-link">Employee</a>
     <a routerLink="/observable/list" routerLinkActive="active-link">List</a>
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">       
+        <button mat-menu-item   class="logout-button" (click)="logout()">Logout</button>
+      </mat-menu>
+      <button (click)="editProfile()" [routerLink]="['/profile/userId',userId]"   >Edit Profile</button>
 </nav>
+</mat-toolbar>
 
-
-
-
+<!-- [queryParams]="{ id: userId }" -->
 <!-- <a routerLink='/department' routerLinkActive="active-link" >Department</a> -->
 <!-- <a [routerLink]="['/users/list']" routerLinkActive="active-link" >User List</a> -->
 <!-- <a [routerLink]="['/lang']" routerLinkActive="active-link" >Languages</a> -->

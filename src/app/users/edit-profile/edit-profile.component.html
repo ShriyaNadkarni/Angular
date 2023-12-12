@@ -1,0 +1,91 @@
+<div class="style">
+    <mat-card>
+      <mat-card-header>
+        <h1>User Sign In</h1>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form" [formGroup]="EditForm" (ngSubmit)="EditForm.status !== 'INVALID' && updateUser()">
+          <mat-form-field class="example-full-width">
+            <mat-label>User Name:</mat-label>
+            <input matInput placeholder="Enter your name" formControlName="name"
+              [ngClass]="{error: getControl('name')?.errors && getControl('name')?.touched}">
+          </mat-form-field>
+          <div *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red">
+            <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
+            <small *ngIf="getControl('name')?.errors?.['minlength']">{{errors.error.valid_name}}</small>
+            <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_names}}</small>
+          </div>
+          <br>
+  
+  
+          <mat-radio-group aria-label="Gender" formControlName="gender"
+            [ngClass]="{error: getControl('gender')?.errors && getControl('gender')?.touched}">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group>
+          <div *ngIf="getControl('gender')?.errors && getControl('gender')?.touched" style="color: red">
+            <small *ngIf="getControl('gender')?.errors?.['required']">{{errors.error.required}}</small>
+          </div>
+          <br>
+  
+          <mat-form-field>
+            <mat-label>Education</mat-label>
+            <mat-select formControlName="education"
+              [ngClass]="{error: getControl('education')?.errors && getControl('education')?.touched}">
+              <mat-option value="Frontenddeveloper">Frontend developer</mat-option>
+              <mat-option value="Backenddeveloper">Backend developer</mat-option>
+              <mat-option value="FullstackDeveloper">Full stack Developer</mat-option>
+              <mat-option value="UI/UX">UI/UX</mat-option>
+              <mat-option value="DatabaseManagement">Database Management</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div *ngIf="getControl('education')?.errors && getControl('education')?.touched" style="color: red">
+            <small *ngIf="getControl('education')?.errors?.['required']">{{errors.error.required}}</small>
+          </div>
+          <br>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Phone.No:</mat-label>
+            <input matInput placeholder="Enter your Phone number" formControlName="phonenumber"
+              [ngClass]="{error: getControl('phonenumber')?.errors && getControl('phonenumber')?.touched}">
+          </mat-form-field>
+          <div *ngIf="getControl('phonenumber')?.errors && getControl('phonenumber')?.touched" style="color: red">
+            <small *ngIf="getControl('phonenumber')?.errors?.['required']">{{errors.error.required}}</small>
+            <small *ngIf="getControl('phonenumber')?.errors?.['pattern']">Only Numbers are allowed </small>
+          </div>
+          <br>
+  
+          
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Email:</mat-label>
+            <input matInput placeholder="Enter your email" formControlName="email"
+              [ngClass]="{error: getControl('email')?.errors && getControl('email')?.touched}">
+          </mat-form-field>
+          <div *ngIf="getControl('email')?.errors && getControl('email')?.touched" style="color: red">
+            <small *ngIf="getControl('email')?.errors?.['required']">{{errors.error.required}}</small>
+            <small *ngIf="getControl('email')?.errors?.['email']">{{errors.error.valid_email}}</small>
+          </div>
+          <br>
+
+  
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red">
+            <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>
+          </div>
+          <br>
+         <button type="submit" [disabled]="EditForm.status === 'INVALID'">Update</button>
+          <button routerLink="/home" routerLinkActive="active-link">Back</button>
+  
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

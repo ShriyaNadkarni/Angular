@@ -2,29 +2,75 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MessageService } from '../../service/message.service';
 import { Observable, Subscription, interval } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from 'src/service/authentication.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  msg: string = "";
+export class HomeComponent implements OnInit{
+  userId: number | null = null;
   userName: string | null = null;
 
-  // intervalSubscription: Subscription = new Subscription;
-
-  // constructor(private messageservice: MessageService) {
-  // }
-
-  // ngOnDestroy(): void {
-  //   this.intervalSubscription.unsubscribe();
-  // }
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private authService:AuthenticationService) { }
 
   ngOnInit() {
-    // this.msg = this.messageservice.getmessage();
+    this.route.queryParams.subscribe(params => {
+      this.userId = params['id'] ? +params['id'] : null;
+      this.userName = params['name'] || null;
+      if (this.userId) {
+        
+        this.authService.getId(this.userId).subscribe((user: any) => {
+          this.authService.userId = this.userId;
+          this.authService.setUserDetails(user);
+        });
+      }
+    });
+  }
+
+
+
+  // ngOnInit() {
+    
+  //   this.route.queryParams.subscribe(params => {
+  //     this.userName = params['name'] || null;
+  //   });
+  // }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // this.route.queryParams.subscribe(params => {
+  //   const userId = params['id'];
+  //   if (userId) {
+  //     this.authService.getId(userId).subscribe((user: any) => {
+  //       // Handle the retrieved user details as needed
+  //       console.log('User details:', user);
+
+  //       // You can pass the user details to other components or services here
+  //     });
+  //   }
+  // });
+
+
+
+  // this.msg = this.messageservice.getmessage();
     // this.intervalSubscription = interval(1000).subscribe(count => {
     //   console.log(count);
     // });
@@ -41,9 +87,14 @@ export class HomeComponent implements OnInit {
     // customObservable.subscribe(data => {
     //   console.log(data);
     // });
-    this.route.queryParams.subscribe(params => {
-      this.userName = params['name'] || null;
-    });
-  }
-  }
 
+
+    
+  // intervalSubscription: Subscription = new Subscription;
+
+  // constructor(private messageservice: MessageService) {
+  // }
+
+  // ngOnDestroy(): void {
+  //   this.intervalSubscription.unsubscribe();
+  // }

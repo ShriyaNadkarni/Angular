@@ -5,7 +5,7 @@
       "name": "Alice",
       "gender": "Female",
       "email": "abc@gmail.com",
-      "education": "Frontend Developer",
+      "education": "Backenddeveloper",
       "phonenumber": 123456789,
       "password": "abcd"
     },
@@ -82,13 +82,13 @@
       "password": "abcd"
     },
     {
+      "id": 10,
       "name": "jerry",
-      "education": "UI/UX",
-      "phonenumber": "12345677",
       "gender": "female",
       "email": "idk@gmail.com",
-      "password": "qwerty",
-      "id": 10
+      "education": "UI/UX",
+      "phonenumber": "12345677",
+      "password": "qwerty"
     }
   ]
 }

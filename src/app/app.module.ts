@@ -32,7 +32,8 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ToastrModule } from 'ngx-toastr';
 import { UsersModule } from 'src/module/users.module';
-//import { FilterPipe } from './pipes/filter.pipe';
+import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UsersModule } from 'src/module/users.module';
     AllComponent,
     FormEventComponent,
     GenderPipe,
-    //FilterPipe
+    EditProfileComponent,
+  
   ],
   imports: [
     BrowserModule,

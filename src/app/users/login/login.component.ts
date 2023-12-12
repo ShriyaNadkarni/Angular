@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   errors=errors;
+  hide = true; 
+ 
 
   loginForm = this.builder.group({
     name: this.builder.control('', Validators.required),
@@ -27,7 +29,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.auth.getAllEmployees().subscribe((employees) => {
-      console.log('Employees:', employees);
       this.auth.setEmployees(employees);
     });
   }
@@ -38,10 +39,12 @@ export class LoginComponent implements OnInit {
       const password: string = this.loginForm.value.password as string;
       const user = this.auth.getUserByNameAndJobTitle(name, password);
       if (user) {
-        this.router.navigate(['home'], { queryParams: { name } });
+        this.router.navigate(['home'], { queryParams: { name ,id: user.id } });
+        this.auth.setIsLogged(true);
       } else {
         this.toaster.error('Invalid credentials');
       }
+     
       
     }
   }

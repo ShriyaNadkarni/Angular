@@ -17,10 +17,13 @@
         </div>
         <br>
 
+
         <mat-form-field class="example-full-width">
-          <mat-label>Password:</mat-label>
-          <input matInput placeholder="Enter your Password" formControlName="password"
-            [ngClass]="{error: getControl('password')?.errors && getControl('password')?.touched}">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
         <div *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red">
           <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>

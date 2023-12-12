@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/service/authentication.service';
 //import { AuthenticationService } from 'src/service/authentication.service';
 
 @Component({
@@ -7,18 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  // constructor(private authService: AuthenticationService) { console.log('NavbarComponent initialized');}
+  islogged :boolean =false ; 
+  userId: string|any =''; 
 
-  // isAuthenticated(): boolean {
-  //   return this.authService.isAuthenticated();
+ constructor(private router : Router , private authService :AuthenticationService){}
+ 
+ 
+  editProfile() {
+    this.router.navigate(['/profile/', this.authService.userId]);
+    console.log('Edit Profile clicked');
+  }
 
-  // }
-  // ngOnInit(){
-  //   console.log('Is Authenticated:', this.isAuthenticated());
-  // }
+  logout(): void {
+    this.authService.logout(); 
+    this.router.navigate(['/login'])   
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.getIsLogged();
+  }
+
+
 }
 
 
 
 
-// implements OnInit

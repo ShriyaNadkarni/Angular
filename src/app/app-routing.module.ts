@@ -16,8 +16,11 @@ import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
 import { LoginComponent } from './users/login/login.component';
 //import { AuthenticationGuard } from '../Guards/authentication.guard';
-import { SignupComponent } from './users/signup/signup.component';
+//import { SignupComponent } from './users/signup/signup.component';
 import { AuthenticationGuard } from 'src/Guards/authentication.guard';
+import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
+import { SignupComponent } from './users/signup/signup.component';
+//import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 
 
 
@@ -43,7 +46,8 @@ const routes: Routes = [
   },
   
   {path: 'login' , component:LoginComponent },
-  {path: 'signup' ,component:SignupComponent},
+  {path: 'signup' , component:SignupComponent },
+  { path: 'profile/:id', component: EditProfileComponent },
   { path: 'course', component: CourseComponent },
   { path: 'course/:id', component: CourseComponent },
   { path: 'lang', component: LanguagesComponent },

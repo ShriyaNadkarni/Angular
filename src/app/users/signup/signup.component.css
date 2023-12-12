@@ -7,6 +7,11 @@
     width: 80%;
   }
   
+
+  .button-margin {
+    margin-right: 10px; 
+  }
+
   /* .example-form {
     width: 500px; 
   }

@@ -33,6 +33,7 @@ export class EditEmployeeComponent implements OnInit {
           phonenumber: [this.employeeData.phonenumber, Validators.required],
         });
       });
+      
     });
   }
 
