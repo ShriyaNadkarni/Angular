@@ -18,9 +18,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  errors=errors;
-  hide = true; 
- 
+  errors = errors;
+  hide = true;
 
   loginForm = this.builder.group({
     name: this.builder.control('', Validators.required),
@@ -39,18 +38,19 @@ export class LoginComponent implements OnInit {
       const password: string = this.loginForm.value.password as string;
       const user = this.auth.getUserByNameAndJobTitle(name, password);
       if (user) {
-        this.router.navigate(['home'], { queryParams: { name ,id: user.id } });
+        // Store user-related information in localStorage
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userData', JSON.stringify(user));
+        
+        this.router.navigate(['home'], { queryParams: { name, id: user.id } });
         this.auth.setIsLogged(true);
       } else {
         this.toaster.error('Invalid credentials');
       }
-     
-      
     }
   }
+
   getControl(name: any) {
-    return this.loginForm.get(name)
+    return this.loginForm.get(name);
   }
-
-
 }

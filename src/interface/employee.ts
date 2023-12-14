@@ -8,4 +8,5 @@ export interface Employee {
     department: string;
     phonenumber: number;
     password: string;
+    Image:string;
 }

@@ -12,10 +12,11 @@
     <button mat-icon-button [matMenuTriggerFor]="userMenu">
         <mat-icon>account_circle</mat-icon>
       </button>
-      <mat-menu #userMenu="matMenu">       
+      <mat-menu #userMenu="matMenu">   
+        <button mat-menu-item  (click)="editProfile()" [routerLink]="['/profile/userId',userId]"   >Edit Profile</button>    
         <button mat-menu-item   class="logout-button" (click)="logout()">Logout</button>
       </mat-menu>
-      <button (click)="editProfile()" [routerLink]="['/profile/userId',userId]"   >Edit Profile</button>
+      
 </nav>
 </mat-toolbar>
 

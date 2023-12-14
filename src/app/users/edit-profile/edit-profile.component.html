@@ -5,6 +5,13 @@
       </mat-card-header>
       <mat-card-content>
         <form class="example-form" [formGroup]="EditForm" (ngSubmit)="EditForm.status !== 'INVALID' && updateUser()">
+          <img [src]="EditForm.get('Image').value ? EditForm.get('Image').value : url" height="200"><br>
+          <input type="file" (change)="onSelectFile($event)" />
+          
+          
+<br>
+<br>
+
           <mat-form-field class="example-full-width">
             <mat-label>User Name:</mat-label>
             <input matInput placeholder="Enter your name" formControlName="name"
@@ -81,8 +88,8 @@
             <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>
           </div>
           <br>
-         <button type="submit" [disabled]="EditForm.status === 'INVALID'">Update</button>
-          <button routerLink="/home" routerLinkActive="active-link">Back</button>
+         <button mat-raised-button color="primary" type="submit" [disabled]="EditForm.status === 'INVALID'">Update</button>
+          <button mat-raised-button color="primary" routerLink="/home" routerLinkActive="active-link">Back</button>
   
           
         </form>

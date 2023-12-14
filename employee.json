@@ -43,7 +43,8 @@
       "email": "abc@gmail.com",
       "education": "UI/UX",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "profileImage": "./assets/img2.jpg"
     },
     {
       "id": 6,
@@ -52,7 +53,8 @@
       "email": "abc@gmail.com",
       "education": "Frontend Developer",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "profileImage": "./assets/img2.jpg"
     },
     {
       "id": 7,
@@ -61,7 +63,8 @@
       "email": "abc@gmail.com",
       "education": "Backend Developer",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "profileImage": "./assets/img2.jpg"
     },
     {
       "id": 8,
@@ -70,7 +73,8 @@
       "email": "abc@gmail.com",
       "education": "Database Management",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "profileImage": "./assets/img2.jpg"
     },
     {
       "id": 9,
@@ -79,16 +83,28 @@
       "email": "siya@gmail.com",
       "education": "Full stack Developer",
       "phonenumber": "123489",
-      "password": "abcd"
+      "password": "abcd",
+      "profileImage": "./assets/img2.jpg"
     },
     {
       "id": 10,
       "name": "jerry",
-      "gender": "female",
+      "gender": "male",
       "email": "idk@gmail.com",
-      "education": "UI/UX",
+      "education": "DatabaseManagement",
       "phonenumber": "12345677",
-      "password": "qwerty"
+      "password": "qwerty",
+      "Image": "./assets/img3.jpg"
+    },
+    {
+      "id": 11,
+      "name": "krish",
+      "gender": "male",
+      "email": "kri@gmail.com",
+      "education": "Backenddeveloper",
+      "phonenumber": "1234567890",
+      "password": "kri",
+      "Image": "./assets/426e8ccba6a35e82e5ceba393293a1ef.jpg"
     }
   ]
 }

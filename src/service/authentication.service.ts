@@ -59,6 +59,7 @@ export class AuthenticationService extends EmployeeService {
 
     return user;
   }
+  
 
   signUp(data: any): Observable<any> {
     return super.postDetails(data);

@@ -15,12 +15,9 @@ import { ObservablesComponent } from './observables/observables.component';
 import { AllComponent } from './observables/all/all.component';
 import { FormEventComponent } from './observables/form-event/form-event.component';
 import { LoginComponent } from './users/login/login.component';
-//import { AuthenticationGuard } from '../Guards/authentication.guard';
-//import { SignupComponent } from './users/signup/signup.component';
 import { AuthenticationGuard } from 'src/Guards/authentication.guard';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 import { SignupComponent } from './users/signup/signup.component';
-//import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 
 
 
@@ -33,30 +30,27 @@ const routes: Routes = [
     children: [
       { path: 'it', component: ITComponent },
       { path: 'computer', component: ComputerComponent },
-      // { path: '', redirectTo: 'it', pathMatch: 'prefix' }
     ]
   },
-  {
-    path: 'observable',
+  { path: 'observable',
     component: ObservablesComponent,
     children: [
       { path: 'list', component: AllComponent },
       { path: 'formevent', component: FormEventComponent },
     ]
-  },
-  
+  }, 
   {path: 'login' , component:LoginComponent },
   {path: 'signup' , component:SignupComponent },
   { path: 'profile/:id', component: EditProfileComponent },
-  { path: 'course', component: CourseComponent },
+  { path: 'course', component: CourseComponent , canActivate:[AuthenticationGuard] },
   { path: 'course/:id', component: CourseComponent },
   { path: 'lang', component: LanguagesComponent },
-  { path: 'add-lang', component: AddLangComponent },
+  { path: 'add-lang', component: AddLangComponent},
   { path: 'employees', component: EmployeeComponent },
   { path: 'add-emp', component: AddEmployeeComponent },
   { path: 'employees/:id/edit', component: EditEmployeeComponent, title: 'Employee Edit' },
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },
-  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },
+  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},
   { path: '**', component: NotfoundComponent }
 ];
 
@@ -73,14 +67,10 @@ export class AppRoutingModule {
 
 
 
-//   {path: 'department/:id',
-//    component: DepartmentComponent,
-//    children:[
-//     {path:'it',component:ITComponent},
-//     {path:'computer' ,component:ComputerComponent}
-//    ]
 
-// }
+
+
+
 
 
 
