@@ -29,14 +29,6 @@ export class HomeComponent implements OnInit{
     });
   }
 
-
-
-  // ngOnInit() {
-    
-  //   this.route.queryParams.subscribe(params => {
-  //     this.userName = params['name'] || null;
-  //   });
-  // }
   }
 
 
