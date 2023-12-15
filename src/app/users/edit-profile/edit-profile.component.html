@@ -91,9 +91,10 @@
             <small *ngIf="getControl('password')?.errors?.['required']">{{errors.error.required}}</small>
           </div>
           <br>
+          <div class="button-container">
          <button mat-raised-button color="primary" type="submit" [disabled]="EditForm.status === 'INVALID'">Update</button>
           <button mat-raised-button color="primary" routerLink="/home" routerLinkActive="active-link">Back</button>
-  
+        </div>
           
         </form>
       </mat-card-content>

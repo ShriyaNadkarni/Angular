@@ -1,32 +1,62 @@
 .style {
-   
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  mat-card {
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .example-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  img {
-    border-radius: 50%; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  button {
-    margin-top: 15px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 220px;
+}
+
+
+mat-card {
+  width: 600px; 
+  box-shadow: 0 4px 8px rgba(29, 20, 20, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+.example-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px; 
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+
+.edit-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-icon mat-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #fff; 
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.mat-radio-button {
+  margin-right: 10px;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%; 
+}

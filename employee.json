@@ -95,16 +95,6 @@
       "phonenumber": "12345677",
       "password": "qwerty",
       "Image": "./assets/img3.jpg"
-    },
-    {
-      "id": 11,
-      "name": "krish",
-      "gender": "male",
-      "email": "kri@gmail.com",
-      "education": "Backenddeveloper",
-      "phonenumber": "1234567890",
-      "password": "kri",
-      "Image": "./assets/426e8ccba6a35e82e5ceba393293a1ef.jpg"
     }
   ]
 }
