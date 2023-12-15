@@ -14,6 +14,7 @@ export class AuthenticationGuard implements CanActivate {
   ): boolean {
     const name = next.queryParamMap.get('name');
     const password = next.queryParamMap.get('password');
+    
    
     if (name && password) {
       const user = this.authService.getUserByNameAndJobTitle(name, password);

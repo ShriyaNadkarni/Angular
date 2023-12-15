@@ -1,41 +1,61 @@
 <h2>CRUD Operation</h2>
-<a [routerLink]="['/add-emp']" routerLinkActive="active-link"><button>Add More</button></a>
-<br>
-<br>
-
-
-Filter Here
-<input type="text" [(ngModel)]="filterData" placeholder="Enter criteria to search...">
-<button id="filter" class="btn btn-outline-success" (click)="  filteredResult()">Filter</button>
-
 
 <br>
+
+<mat-form-field>
+  <input matInput [(ngModel)]="filterData" placeholder="Enter criteria to search...">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="filteredResult()" class="filterbutton">Filter</button>
+
+<a mat-button [routerLink]="['/add-emp']" routerLinkActive="active-link" class="add-button">
+  <mat-icon>add</mat-icon>
+</a>
+
+
 <br>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Gender</th>
-      <th>Phone.No</th>
-      <th>Email</th>
-      <th>Education</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of allEmployees">
-      <td>{{ item.id }}</td>
-      <td>{{item.gender | gender:item.name |uppercase}}</td>
-      <td>{{ item.gender | uppercase }}</td>
-      <td>{{ item.phonenumber }}</td>
-      <td>{{ item.email }}</td>
-      <td>{{ item.education | uppercase}}</td>
-      <td (click)="editEmployee(item.id)"><button routerLink="/employees/{{item.id}}/edit"
-          routerLinkActive="active-link" [ngStyle]="{'background-color': 'green', 'color': 'white'}">Edit</button></td>
-      <td><button (click)="deleteEmployee(item.id)"
-          [ngStyle]="{'background-color': 'red', 'color': 'white'}">Delete</button></td>
-    </tr>
-  </tbody>
+<br>
+<table mat-table [dataSource]="allEmployees">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let item">{{ item.name| gender:item.name |uppercase }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef>Gender</th>
+    <td mat-cell *matCellDef="let item">{{ item.gender| uppercase }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="phonenumber">
+    <th mat-header-cell *matHeaderCellDef>Phone no.</th>
+    <td mat-cell *matCellDef="let item">{{ item.phonenumber }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let item">{{ item.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="education">
+    <th mat-header-cell *matHeaderCellDef>Education</th>
+    <td mat-cell *matCellDef="let item">{{ item.education }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let item">
+      <button mat-button (click)="editEmployee(item.id)"  mat-raised-button  class="edit-button">Edit</button>
+      <button mat-button (click)="deleteEmployee(item.id)" mat-raised-button class="delete-button" >Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['id', 'name', 'gender' , 'phonenumber' ,'email' ,'education' , 'actions']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['id', 'name','gender' , 'phonenumber', 'email' , 'education' , 'actions']"></tr>
 </table>
+
+
