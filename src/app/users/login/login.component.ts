@@ -38,15 +38,24 @@ export class LoginComponent implements OnInit {
       const password: string = this.loginForm.value.password as string;
       const user = this.auth.getUserByNameAndJobTitle(name, password);
       if (user) {
-        // Store user-related information in localStorage
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userData', JSON.stringify(user));
-        
+        console.log("inside login function");
+        if (user.isAdmin) {
+          console.log('isAdmin:', user.isAdmin);
+          this.toaster.success('Welcome Admin!');
+          console.log("message inside login page ");
+          // this.router.navigate(['employees']);
+        } 
+    
         this.router.navigate(['home'], { queryParams: { name, id: user.id } });
         this.auth.setIsLogged(true);
       } else {
-        this.toaster.error('Invalid credentials');
+        this.toaster.error('Invalid username or password');
       }
+    }
+    else{
+      this.toaster.error(' Please fill in all required fields to log in!');
     }
   }
 

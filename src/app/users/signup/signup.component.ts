@@ -29,6 +29,7 @@ export class SignupComponent {
 
   errors = errors;
   hide = true;
+  isRoleReadOnly = true; 
 
   signupForm: FormGroup = this.builder.group({
     name: this.builder.control('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
@@ -36,7 +37,8 @@ export class SignupComponent {
     phonenumber: this.builder.control('', Validators.required),
     gender: this.builder.control('male', Validators.required),
     email: this.builder.control('', [Validators.required, Validators.email]),
-    password: this.builder.control('', [Validators.required, Validators.maxLength(10)])
+    password: this.builder.control('', [Validators.required, Validators.maxLength(10)]),
+    role: this.builder.control({ value: '', disabled: this.isRoleReadOnly }, Validators.required),
   });
 
   signup() {

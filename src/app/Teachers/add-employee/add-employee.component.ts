@@ -15,7 +15,7 @@ import { errors } from 'src/errors';
 })
 export class AddEmployeeComponent {
   EmployeeForm: FormGroup;
-  id: number = 0;
+  id: number = 0; 
   gender: string = "";
   name: string = "";
   education: string = "";
@@ -27,7 +27,7 @@ export class AddEmployeeComponent {
   constructor(private frmBuilder: FormBuilder, private eservice: EmployeeService, private router: Router) {
     this.EmployeeForm = frmBuilder.group({
       id: new FormControl(),
-      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/ )]),
       gender: new FormControl('', [Validators.required]),
       education: new FormControl('', [Validators.required]),
       phonenumber: new FormControl('', [Validators.required]),

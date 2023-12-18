@@ -7,7 +7,8 @@
       "email": "abc@gmail.com",
       "education": "Backenddeveloper",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "isAdmin": false
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "email": "abc@gmail.com",
       "education": "Backend Developer",
       "phonenumber": "1234",
-      "password": "abcd"
+      "password": "abcd",
+      "isAdmin": false
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "education": "Full stack Developer",
       "phonenumber": 123456789,
       "email": "abc@gmail.com",
-      "password": "abcd"
+      "password": "abcd",
+      "isAdmin": false
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "email": "abc@gmail.com",
       "education": "Database Management",
       "phonenumber": 123456789,
-      "password": "abcd"
+      "password": "abcd",
+      "isAdmin": false
     },
     {
       "id": 5,
@@ -44,7 +48,8 @@
       "education": "UI/UX",
       "phonenumber": 123456789,
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg"
+      "profileImage": "./assets/img2.jpg",
+      "isAdmin": false
     },
     {
       "id": 6,
@@ -54,7 +59,8 @@
       "education": "Frontend Developer",
       "phonenumber": 123456789,
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg"
+      "profileImage": "./assets/img2.jpg",
+      "isAdmin": false
     },
     {
       "id": 7,
@@ -64,7 +70,8 @@
       "education": "Backend Developer",
       "phonenumber": 123456789,
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg"
+      "profileImage": "./assets/img2.jpg",
+      "isAdmin": false
     },
     {
       "id": 8,
@@ -74,7 +81,8 @@
       "education": "Database Management",
       "phonenumber": 123456789,
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg"
+      "profileImage": "./assets/img2.jpg",
+      "isAdmin": false
     },
     {
       "id": 9,
@@ -84,7 +92,8 @@
       "education": "Full stack Developer",
       "phonenumber": "123489",
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg"
+      "profileImage": "./assets/img2.jpg",
+      "isAdmin": false
     },
     {
       "id": 10,
@@ -94,7 +103,18 @@
       "education": "DatabaseManagement",
       "phonenumber": "12345677",
       "password": "qwerty",
-      "Image": "./assets/img3.jpg"
+      "Image": "./assets/img3.jpg",
+      "isAdmin": false
+    },
+    {
+      "id": 11,
+      "name": "Admin",
+      "gender": "Male",
+      "email": "admin@example.com",
+      "education": "Database Management",
+      "phonenumber": "123456789",
+      "password": "admin",
+      "isAdmin": true
     }
   ]
 }

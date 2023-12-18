@@ -23,34 +23,34 @@ import { SignupComponent } from './users/signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard]},
+  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard]},     //both admin + user
   {
-    path: 'department',
-    component: DepartmentComponent,
+    path: 'department',                                                           //both admin + user
+    component: DepartmentComponent,                                         
     children: [
       { path: 'it', component: ITComponent },
       { path: 'computer', component: ComputerComponent },
     ]
   },
-  { path: 'observable',
+  { path: 'observable',                                                         //both admin + user
     component: ObservablesComponent,
     children: [
       { path: 'list', component: AllComponent },
       { path: 'formevent', component: FormEventComponent },
     ]
   }, 
-  {path: 'login' , component:LoginComponent },
-  {path: 'signup' , component:SignupComponent },
-  { path: 'profile/:id', component: EditProfileComponent },
-  { path: 'course', component: CourseComponent , canActivate:[AuthenticationGuard] },
-  { path: 'course/:id', component: CourseComponent },
-  { path: 'lang', component: LanguagesComponent },
-  { path: 'add-lang', component: AddLangComponent},
-  { path: 'employees', component: EmployeeComponent },
-  { path: 'add-emp', component: AddEmployeeComponent },
-  { path: 'employees/:id/edit', component: EditEmployeeComponent, title: 'Employee Edit' },
-  { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },
-  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},
+  {path: 'login' , component:LoginComponent },                                  //both admin + user
+  {path: 'signup' , component:SignupComponent },                                   //both admin + user
+  { path: 'profile/:id', component: EditProfileComponent },                         //both admin + user
+  { path: 'course', component: CourseComponent , canActivate:[AuthenticationGuard] },  //only admin
+  { path: 'course/:id', component: CourseComponent },                                   //only admin
+  { path: 'lang', component: LanguagesComponent },                                   //only admin
+  { path: 'add-lang', component: AddLangComponent},                                   //only admin
+  { path: 'employees', component: EmployeeComponent },                                 //only admin        
+  { path: 'add-emp', component: AddEmployeeComponent },                                  //only admin
+  { path: 'employees/:id/edit', component: EditEmployeeComponent, title: 'Employee Edit' }, //only admin
+  { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
+  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},  
   { path: '**', component: NotfoundComponent }
 ];
 

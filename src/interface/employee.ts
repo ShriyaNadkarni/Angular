@@ -9,4 +9,5 @@ export interface Employee {
     phonenumber: number;
     password: string;
     Image:string;
+    isAdmin?: boolean;
 }
