@@ -31,6 +31,7 @@ export class EditEmployeeComponent implements OnInit {
           email: [this.employeeData.email, [Validators.required, Validators.email]],
           education: [this.employeeData.education, Validators.required],
           phonenumber: [this.employeeData.phonenumber, Validators.required],
+          isAdmin: [false]
         });
       });
       

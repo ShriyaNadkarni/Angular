@@ -42,11 +42,11 @@ const routes: Routes = [
   {path: 'login' , component:LoginComponent },                                  //both admin + user
   {path: 'signup' , component:SignupComponent },                                   //both admin + user
   { path: 'profile/:id', component: EditProfileComponent },                         //both admin + user
-  { path: 'course', component: CourseComponent , canActivate:[AuthenticationGuard] },  //only admin
+  { path: 'course', component: CourseComponent},                                        //only admin
   { path: 'course/:id', component: CourseComponent },                                   //only admin
   { path: 'lang', component: LanguagesComponent },                                   //only admin
-  { path: 'add-lang', component: AddLangComponent},                                   //only admin
-  { path: 'employees', component: EmployeeComponent },                                 //only admin        
+  { path: 'add-lang', component: AddLangComponent },                                   //only admin
+  { path: 'employees', component: EmployeeComponent  },                                 //only admin        
   { path: 'add-emp', component: AddEmployeeComponent },                                  //only admin
   { path: 'employees/:id/edit', component: EditEmployeeComponent, title: 'Employee Edit' }, //only admin
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  

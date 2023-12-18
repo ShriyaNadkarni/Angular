@@ -32,6 +32,8 @@
           <small *ngIf="getControl('email')?.errors?.['pattern']">{{errors.error.valid_email}}</small>
         </mat-error>
       </mat-form-field><br>
+
+      <mat-checkbox formControlName="isAdmin"> Admin</mat-checkbox>
   
       <mat-form-field appearance="fill">
         <mat-label>Education :</mat-label>

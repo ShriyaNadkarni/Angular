@@ -29,6 +29,10 @@ export class NavbarComponent {
     return this.authService.getIsLogged();
   }
 
+  isAdmin() {
+    const user = this.authService.getUserDetails();
+    return user ? user.isAdmin : false;
+  }
 
 }
 

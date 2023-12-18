@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       const password: string = this.loginForm.value.password as string;
       const user = this.auth.getUserByNameAndJobTitle(name, password);
       if (user) {
+        console.log('isAdmin:', user.isAdmin);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userData', JSON.stringify(user));
         console.log("inside login function");
@@ -46,8 +47,7 @@ export class LoginComponent implements OnInit {
           this.toaster.success('Welcome Admin!');
           console.log("message inside login page ");
           // this.router.navigate(['employees']);
-        } 
-    
+        }    
         this.router.navigate(['home'], { queryParams: { name, id: user.id } });
         this.auth.setIsLogged(true);
       } else {

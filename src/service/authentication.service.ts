@@ -11,10 +11,11 @@ export class AuthenticationService extends EmployeeService {
   userId: number | null = null;
   private authenticatedUser: Employee | null = null;
 
+
   getId(id: number): Observable<any> {
     return super.getEmployeeById(id);
   }
-
+  private isAdmin: boolean = false ;
   private islogged: boolean = false;
 
   getIsLogged(): boolean {
@@ -23,6 +24,7 @@ export class AuthenticationService extends EmployeeService {
 
   setIsLogged(value: boolean): void {
     this.islogged = value;
+    this.isAdmin = false ; 
   }
 
   getAllEmployees(): Observable<Employee[]> {

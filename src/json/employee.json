@@ -7,8 +7,7 @@
       "email": "abc@gmail.com",
       "education": "Backenddeveloper",
       "phonenumber": 123456789,
-      "password": "abcd",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": 2,
@@ -115,6 +114,16 @@
       "phonenumber": "123456789",
       "password": "admin",
       "isAdmin": true
+    },
+    {
+      "name": "Krish",
+      "education": "Frontenddeveloper",
+      "phonenumber": "6789054321",
+      "gender": "male",
+      "email": "krish@gmail.com",
+      "password": "krish",
+      "isAdmin": true,
+      "id": 12
     }
   ]
 }

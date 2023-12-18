@@ -6,6 +6,7 @@ import { errors } from 'src/errors';
 import { AuthenticationService } from 'src/service/authentication.service';
 
 interface SignupForm {
+  isAdmin: boolean;
   name: string;
   education: string;
   phonenumber: string;
@@ -30,6 +31,7 @@ export class SignupComponent {
   errors = errors;
   hide = true;
   isRoleReadOnly = true; 
+  //isAdmin : boolean = false;
 
   signupForm: FormGroup = this.builder.group({
     name: this.builder.control('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]*$/)]),
@@ -38,12 +40,13 @@ export class SignupComponent {
     gender: this.builder.control('male', Validators.required),
     email: this.builder.control('', [Validators.required, Validators.email]),
     password: this.builder.control('', [Validators.required, Validators.maxLength(10)]),
-    role: this.builder.control({ value: '', disabled: this.isRoleReadOnly }, Validators.required),
+   // role: this.builder.control({ value: '', disabled: this.isRoleReadOnly }, Validators.required),
   });
 
   signup() {
     if (this.signupForm.valid) {
       const formData: SignupForm = this.signupForm.value as SignupForm; 
+      formData.isAdmin = false;
       this.auth.signUp(formData).subscribe(
         (res) => {
           this.toaster.success('Signed in successfully');
