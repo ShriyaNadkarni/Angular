@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../../service/employee.service';
 import { Employee } from '../../../interface/employee';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { from } from 'rxjs';
 import { filter, map } from 'rxjs';
+import { AuthenticationService } from 'src/service/authentication.service';
 
 @Component({
   selector: 'app-employee',
@@ -18,13 +19,24 @@ export class EmployeeComponent implements OnInit {
 
 
 
-  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient) { }
+  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient , private authService : AuthenticationService) { }
 
 
   ngOnInit(): void {
-    this.getDetails();
+    
     // this.filteredResult();
+    const isAuthenticated = this.authService.getIsAuthenticated();
+    const isAdmin = this.authService.getIsAdmin();
+
+    if (!isAuthenticated || !isAdmin) {
+     this.router.navigate(['home'])
+    }
+
+
+    this.getDetails();
   }
+
+  
 
   getDetails() {
     this.eservice.getDetails().subscribe((data) => {

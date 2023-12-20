@@ -10,12 +10,28 @@ export class AuthenticationService extends EmployeeService {
   private employees: Employee[] = [];
   userId: number | null = null;
   private authenticatedUser: Employee | null = null;
+  private isAuthenticated = false;
+  private isAdmin = false;
 
+
+
+  
+  getIsAuthenticated(): boolean {
+    return this.isAuthenticated;
+  }
+
+  setIsAuthenticated(value: boolean): void {
+    this.isAuthenticated = value;
+  }
+
+  getAuthenticatedUser(): Employee | null {
+    return this.authenticatedUser;
+  }
+  
 
   getId(id: number): Observable<any> {
     return super.getEmployeeById(id);
   }
-  private isAdmin: boolean = false ;
   private islogged: boolean = false;
 
   getIsLogged(): boolean {
@@ -56,6 +72,9 @@ export class AuthenticationService extends EmployeeService {
 
  
     if (user) {
+      this.setIsAuthenticated(true);
+      this.setIsAdmin(user.isAdmin || false); 
+      this.authenticatedUser = user;
       this.setUserDetails(user);
     }
 
@@ -66,4 +85,22 @@ export class AuthenticationService extends EmployeeService {
   signUp(data: any): Observable<any> {
     return super.postDetails(data);
   }
+
+  getIsAdmin(): boolean {
+    console.log("in getIsAdmin()");
+    console.log(this.isAdmin);
+   
+    return this.isAdmin;
+  }
+
+  setIsAdmin(value: boolean): void {
+    this.isAdmin = value;
+    console.log("in setIsAdmin()");
+    console.log(this.isAdmin);
+   
+  }
+
+
+
+
 }
