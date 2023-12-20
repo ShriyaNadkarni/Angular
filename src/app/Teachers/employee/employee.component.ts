@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { from } from 'rxjs';
 import { filter, map } from 'rxjs';
 import { AuthenticationService } from 'src/service/authentication.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-employee',
@@ -19,7 +20,7 @@ export class EmployeeComponent implements OnInit {
 
 
 
-  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient , private authService : AuthenticationService) { }
+  constructor(private eservice: EmployeeService, private router: Router, private http: HttpClient , private authService : AuthenticationService ,    private toaster: ToastrService,) { }
 
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class EmployeeComponent implements OnInit {
     const isAdmin = this.authService.getIsAdmin();
 
     if (!isAuthenticated || !isAdmin) {
+      this.toaster.error('User not authenticated!');
      this.router.navigate(['home'])
     }
 

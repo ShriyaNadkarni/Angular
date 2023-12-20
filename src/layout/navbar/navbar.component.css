@@ -1,33 +1,28 @@
-/* navbar.component.css */
+.mat-toolbar {
+  background-color: #574d4d;
+}
 
 .navbar {
-    background-color: #574d4d;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    /* background-color: #ddd; */
-    color: black;
-  }
-  
-  .navbar a.active-link {
-    background-color: #4CAF50;
-    color: white;
-  }
+  display: flex;
+  align-items: center;
+}
 
-  .logout-button {
-    background-color: #ff0000 !important; 
-    color: #ffffff !important; 
-    font-weight: bold !important; 
-  }
-  
+.mat-icon {
+  font-size: 24px;  
+  color: #ffffff; 
+}
+
+
+.logout-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c70000;
+}

@@ -11,6 +11,7 @@
           <mat-label>User Name:</mat-label>
           <input matInput placeholder="Enter your name" formControlName="name"
             [ngClass]="{error: getControl('name')?.errors && getControl('name')?.touched}">
+          <mat-icon matSuffix>account_circle</mat-icon>
         </mat-form-field>
         <div *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red">
           <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
@@ -23,7 +24,8 @@
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>

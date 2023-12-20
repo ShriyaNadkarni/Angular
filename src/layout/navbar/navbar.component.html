@@ -1,26 +1,59 @@
- <mat-toolbar  *ngIf="isAuthenticated()">
-<nav class="navbar" >
-    <a [routerLink]="['/home']" routerLinkActive="active-link">Home</a>     
-    <a [routerLink]="['students/student']" routerLinkActive="active-link">Management</a>
-    <a [routerLink]="['students/studentdetails']" routerLinkActive="active-link">Employee Details</a>
-    <a [routerLink]="['/course']" routerLinkActive="active-link">Course</a>  
-    <a routerLink="/department/it" routerLinkActive="active-link" >IT</a>
-    <a routerLink="/department/computer" routerLinkActive="active-link" *ngIf="isAdmin()">Computer</a>
-    <a [routerLink]="['/employees']" routerLinkActive="active-link" *ngIf="isAdmin()">Employee</a>  
-    <a routerLink="/observable/list" routerLinkActive="active-link"*ngIf="isAdmin()">List</a>
-    <button mat-icon-button [matMenuTriggerFor]="userMenu">
-        <mat-icon>account_circle</mat-icon>
+<mat-toolbar *ngIf="isAuthenticated()">
+  <nav class="navbar">
+
+    <button mat-icon-button [matMenuTriggerFor]="page">
+      <mat-icon aria-hidden="false" aria-label="Example menu icon" fontIcon="menu"></mat-icon>
+    </button>
+    <mat-menu #page="matMenu">
+
+      <button mat-menu-item [routerLink]="['/home']">
+        <mat-icon fontIcon="home"></mat-icon>
+        <span>Home</span>
       </button>
-      <mat-menu #userMenu="matMenu">   
-        <button mat-menu-item  (click)="editProfile()" [routerLink]="['/profile/userId',userId]"   >Edit Profile</button>    
-        <button mat-menu-item   class="logout-button" (click)="logout()">Logout</button>
+
+      <button mat-menu-item [routerLink]="['students/student']">
+        <mat-icon>label_important</mat-icon>
+        <span>Management</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['students/studentdetails']">
+        <mat-icon>label_important</mat-icon>
+        <span>Employee Details</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['/course']">
+        <mat-icon>label_important</mat-icon>
+        <span>Course</span>
+      </button>
+
+      <button mat-menu-item [matMenuTriggerFor]="departments">
+        <mat-icon>label_important</mat-icon>
+        <span>Department</span>
+      </button>
+      <mat-menu #departments="matMenu">
+        <button mat-menu-item routerLink="/department/it">IT</button>
+        <button mat-menu-item routerLink="/department/computer">Computer</button>
       </mat-menu>
-      
 
-</nav>
+      <button mat-menu-item [routerLink]="['/employees']" *ngIf="isAdmin()">
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Employee</span>
+      </button>
+
+      <button mat-menu-item routerLink="/observable/list" *ngIf="isAdmin()">
+        <mat-icon>label_important</mat-icon>
+        <span>List</span>
+      </button>
+
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item (click)="editProfile()" [routerLink]="['/profile/userId',userId]">Edit Profile</button>
+      <button mat-menu-item class="logout-button" (click)="logout()">Logout</button>
+    </mat-menu>
+
+  </nav>
 </mat-toolbar>
-
-<!-- [queryParams]="{ id: userId }" -->
-<!-- <a routerLink='/department' routerLinkActive="active-link" >Department</a> -->
-<!-- <a [routerLink]="['/users/list']" routerLinkActive="active-link" >User List</a> -->
-<!-- <a [routerLink]="['/lang']" routerLinkActive="active-link" >Languages</a> -->
