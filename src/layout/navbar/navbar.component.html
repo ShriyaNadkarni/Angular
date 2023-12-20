@@ -1,11 +1,11 @@
  <mat-toolbar  *ngIf="isAuthenticated()">
 <nav class="navbar" >
     <a [routerLink]="['/home']" routerLinkActive="active-link">Home</a>     
-    <a [routerLink]="['students/student']" routerLinkActive="active-link">Student</a>
-    <a [routerLink]="['students/studentdetails']" routerLinkActive="active-link">StudentDetails</a>
+    <a [routerLink]="['students/student']" routerLinkActive="active-link">Management</a>
+    <a [routerLink]="['students/studentdetails']" routerLinkActive="active-link">Employee Details</a>
     <a [routerLink]="['/course']" routerLinkActive="active-link">Course</a>  
-    <a routerLink="/department/it" routerLinkActive="active-link">IT</a>
-    <a routerLink="/department/computer" routerLinkActive="active-link">Computer</a>
+    <a routerLink="/department/it" routerLinkActive="active-link" >IT</a>
+    <a routerLink="/department/computer" routerLinkActive="active-link" *ngIf="isAdmin()">Computer</a>
     <a [routerLink]="['/employees']" routerLinkActive="active-link" *ngIf="isAdmin()">Employee</a>  
     <a routerLink="/observable/list" routerLinkActive="active-link"*ngIf="isAdmin()">List</a>
     <button mat-icon-button [matMenuTriggerFor]="userMenu">

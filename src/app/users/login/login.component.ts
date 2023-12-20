@@ -11,6 +11,7 @@ import { AuthenticationService } from 'src/service/authentication.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  siteKey = '6LeLKDUpAAAAACBYN_7Ccplj0L_Ow8Ho7ToYagY9'
   constructor(
     private builder: FormBuilder,
     private toaster: ToastrService,

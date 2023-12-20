@@ -7,6 +7,7 @@
       "email": "abc@gmail.com",
       "education": "Backenddeveloper",
       "phonenumber": 123456789,
+      "password": "abcd",
       "isAdmin": true
     },
     {
@@ -16,7 +17,6 @@
       "email": "abc@gmail.com",
       "education": "Backend Developer",
       "phonenumber": "1234",
-      "password": "abcd",
       "isAdmin": false
     },
     {

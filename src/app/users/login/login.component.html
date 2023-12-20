@@ -5,6 +5,7 @@
       <h1>Login </h1>
     </mat-card-header>
     <mat-card-content>
+      <!-- || !captchaResolved -->
       <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
         <mat-form-field class="example-full-width">
           <mat-label>User Name:</mat-label>
@@ -31,6 +32,10 @@
         </div>
         <br>
 
+        <!-- (resolved)="onResolved($event)" -->
+        <!-- <re-captcha >aaa</re-captcha> -->
+        <re-captcha [siteKey]='siteKey'></re-captcha>
+        <br>
         <button mat-raised-button color="primary">Login</button>
         <a [routerLink]="['/signup']"><button mat-raised-button color="accent">New ?</button></a>
 

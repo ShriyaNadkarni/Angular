@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +33,8 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { ToastrModule } from 'ngx-toastr';
 import { UsersModule } from 'src/module/users.module';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
+import { environment } from 'src/environments/environment';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -61,6 +63,7 @@ import { EditProfileComponent } from './users/edit-profile/edit-profile.componen
   
   ],
   imports: [
+   
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -70,9 +73,23 @@ import { EditProfileComponent } from './users/edit-profile/edit-profile.componen
     FormsModule,
     UsersModule,
     MaterialModule,
+    RecaptchaV3Module,
     ToastrModule.forRoot()
   ],
-  providers: [MessageService, NumlistService, LserviceService, EmployeeService],
-  bootstrap: [AppComponent]
+  providers: [MessageService, NumlistService, LserviceService, EmployeeService ,{
+    provide: RECAPTCHA_V3_SITE_KEY,
+    useValue: environment.recaptchaSiteKey,
+  },],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
 })
 export class AppModule { }
+
+
+
+
+
+
+
+//6LfKGzUpAAAAAERbFV9jGZ2H_SGgVj0WxVrvjmTf     -sitekey
+//6LfKGzUpAAAAADJGnbpO1HZAe_oeLPelcAW88F2R    -secretkey
