@@ -7,12 +7,13 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { LoginComponent } from 'src/app/users/login/login.component';
 import { SignupComponent } from 'src/app/users/signup/signup.component';
 import { RecaptchaV3Module  } from 'ng-recaptcha';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
   declarations: [SignupComponent,LoginComponent],
 
-imports: [MaterialModule, FormsModule, ReactiveFormsModule ,CommonModule , RecaptchaV3Module],
+imports: [MaterialModule, FormsModule, ReactiveFormsModule ,CommonModule , RecaptchaV3Module ,NgxCaptchaModule],
 schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UsersModule {}

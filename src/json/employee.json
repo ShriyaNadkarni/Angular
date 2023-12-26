@@ -17,7 +17,8 @@
       "email": "abc@gmail.com",
       "education": "Backend Developer",
       "phonenumber": "1234",
-      "isAdmin": false
+      "password": "abcd",
+      "isAdmin": true
     },
     {
       "id": 3,
@@ -53,12 +54,10 @@
     {
       "id": 6,
       "name": "Tom",
-      "gender": "Male",
+      "gender": "Female",
       "email": "abc@gmail.com",
       "education": "Frontend Developer",
       "phonenumber": 123456789,
-      "password": "abcd",
-      "profileImage": "./assets/img2.jpg",
       "isAdmin": false
     },
     {

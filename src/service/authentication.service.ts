@@ -13,7 +13,9 @@ export class AuthenticationService extends EmployeeService {
   private isAuthenticated = false;
   private isAdmin = false;
 
-
+  getEmployeeDataByGender(gender: string): Observable<Employee[]> {
+    return super.getEmployeesByGender();
+  }
 
   
   getIsAuthenticated(): boolean {

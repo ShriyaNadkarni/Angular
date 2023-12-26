@@ -34,12 +34,16 @@
         </div>
         <br>
 
+        <ngx-recaptcha2 #captchaElem [siteKey]=siteKey formControlName="recaptcha"></ngx-recaptcha2>
+
+        <!-- (reset)="handleRecap()" (expire)="handleExpire()" (load)="handleLoad()" -->
+        <!-- (success)="handleSuccess($event)" [size]="size" -->
         <!-- (resolved)="onResolved($event)" -->
         <!-- <re-captcha >aaa</re-captcha> -->
-        <re-captcha [siteKey]='siteKey'></re-captcha>
+        <!-- <re-captcha [siteKey]='siteKey'></re-captcha> -->
         <br>
-        <button mat-raised-button color="primary">Login</button>
-        <a [routerLink]="['/signup']"><button mat-raised-button color="accent">New ?</button></a>
+        <button mat-raised-button color="primary"  class="buttons">Login</button>
+        <a [routerLink]="['/signup']"><button mat-raised-button color="accent"  class="buttons">New ?</button></a>
 
       </form>
     </mat-card-content>

@@ -1,4 +1,15 @@
 
 <div *ngIf="userName">
     <h1>Welcome {{ userName }}!</h1>
+    <div class="graph">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Employee Gender Distribution</mat-card-title>
+          </mat-card-header>
+    
+          <mat-card-content>
+            <canvas #canvas width="400" height="200"></canvas>
+          </mat-card-content>
+        </mat-card>
+      </div>
 </div>

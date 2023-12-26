@@ -6,6 +6,7 @@ import { SignupComponent } from 'src/app/users/signup/signup.component';
 import { EditProfileComponent } from 'src/app/users/edit-profile/edit-profile.component';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module  } from 'ng-recaptcha';
 import { environment } from 'src/environments/environment';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 const routes: Routes = [
   {path: 'list' ,component:ListComponent},
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes) , NgxCaptchaModule],
   exports: [RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

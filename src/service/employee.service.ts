@@ -36,6 +36,10 @@ export class EmployeeService {
   deleteEmployee(employeeData:any) {
     return this.http.delete(this.baseUrl+ apiUrls.employee.emp_list+ employeeData)
   } 
+
+  getEmployeesByGender(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(`${this.baseUrl + apiUrls.employee.emp_list}`);
+  }
     
 }
 

@@ -35,6 +35,7 @@ import { UsersModule } from 'src/module/users.module';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 import { environment } from 'src/environments/environment';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
     UsersModule,
     MaterialModule,
     RecaptchaV3Module,
+    NgxCaptchaModule,
     ToastrModule.forRoot()
   ],
   providers: [MessageService, NumlistService, LserviceService, EmployeeService ,{

@@ -35,9 +35,10 @@ const routes: Routes = [
   { path: 'observable',                                                         //both admin + user
     component: ObservablesComponent,
     children: [
-      { path: 'list', component: AllComponent },
+      { path: 'list', component: AllComponent  },
       { path: 'formevent', component: FormEventComponent },
     ]
+    , canActivate: [AuthenticationGuard]
   }, 
   {path: 'login' , component:LoginComponent },                                  //both admin + user
   {path: 'signup' , component:SignupComponent },                                   //both admin + user
@@ -50,7 +51,7 @@ const routes: Routes = [
   { path: 'add-emp', component: AddEmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
   { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' }, //only admin
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
-  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule)},  
+  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },  
   { path: '**', component: NotfoundComponent }
 ];
 
