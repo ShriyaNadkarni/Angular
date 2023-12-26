@@ -112,7 +112,7 @@
       "education": "Database Management",
       "phonenumber": "123456789",
       "password": "admin",
-      "isAdmin": true
+      "Image": "./assets/img3.jpg"
     },
     {
       "name": "Krish",
