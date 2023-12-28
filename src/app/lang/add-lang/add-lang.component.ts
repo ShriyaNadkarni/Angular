@@ -8,11 +8,30 @@ import { Reviews } from '../../../interface/reviews';
 interface CourseWithLanguage extends Course, Reviews {}
 
 @Component({
-  selector: 'app-add-lang',
-  templateUrl: './add-lang.component.html',
+  selector: 'app-todo-item',
+  // template: `<span class="todo noselect" 
+  //      (click)="onToggle()">{{todo.owner.firstname}} - {{todo.description}}
+  //      - completed: {{todo.completed}}</span>`
+  templateUrl:  './add-lang.component.html',
   styleUrls: ['./add-lang.component.css']
+
 })
+
 export class AddLangComponent {
+
+  // @Input()
+  //   todo:Todo;
+
+  //   @Output()
+  //   toggle = new EventEmitter<Object>();
+
+  //   onToggle() {
+  //       this.toggle.emit(this.todo);
+  //   }
+
+
+
+
   constructor(private fb: FormBuilder, private lservice: LserviceService, private router: Router) {}
 
   addLanguages = this.fb.group({

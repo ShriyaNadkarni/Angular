@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, signal } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
     this.auth.getAllEmployees().subscribe((employees) => {
       this.auth.setEmployees(employees);
     });
+   this.user();
   }
 
   login() {
@@ -49,16 +50,25 @@ export class LoginComponent implements OnInit {
       const user: Employee | any = this.auth.getUserByNameAndJobTitle(name, password);
 
       if (user) {
-        console.log('isAdmin:', user.isAdmin);
-        this.toaster.success('Welcome Admin!');
-        console.log('message inside login page ');
+        // console.log('isAdmin:', user.isAdmin);
+        if(user.isAdmin){
+          this.toaster.success('Welcome Admin!');
+        }else{
+          this.toaster.success('Welcome user!');
+        }        
+        // console.log('message inside login function ');
       }
 
       this.router.navigate(['home'], { queryParams: { name, id: user.id } });
       this.auth.setIsLogged(true);
     } else {
-      this.toaster.error('Please fill in all required fields to log in!');
+      this.toaster.error('Please fill in all required fields to login!');
     }
+  }
+
+  user(){
+  const firstName = signal('John');
+  console.log(firstName)
   }
 
   getControl(name: any) {

@@ -36,6 +36,12 @@ import { EditProfileComponent } from './users/edit-profile/edit-profile.componen
 import { environment } from 'src/environments/environment';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { ActionReducerMap, StoreModule } from '@ngrx/store';
+import { reducers } from './state.model';
+
+// export interface AppState {
+//   articles: Article[];
+// }
 
 
 @NgModule({
@@ -76,7 +82,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     MaterialModule,
     RecaptchaV3Module,
     NgxCaptchaModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    StoreModule.forRoot(reducers),
   ],
   providers: [MessageService, NumlistService, LserviceService, EmployeeService ,{
     provide: RECAPTCHA_V3_SITE_KEY,

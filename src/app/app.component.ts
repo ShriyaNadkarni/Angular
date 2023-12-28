@@ -11,12 +11,12 @@ export class AppComponent  {
  
 
 
-  title = 'Angular-Routing';
-  constructor(private router:Router){}
+  // title = 'Angular-Routing';
+  // constructor(private router:Router){}
    
-  Student(){
-      this.router.navigate(['/students'])
-    }
+  // Student(){
+  //     this.router.navigate(['/students'])
+  //   }
 
 
   

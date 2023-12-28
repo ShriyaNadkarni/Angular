@@ -18,6 +18,7 @@ import { LoginComponent } from './users/login/login.component';
 import { AuthenticationGuard } from 'src/Guards/authentication.guard';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 import { SignupComponent } from './users/signup/signup.component';
+import { NgrxpracComponent } from './ngrxprac/ngrxprac.component';
 
 
 
@@ -40,7 +41,8 @@ const routes: Routes = [
     ]
     , canActivate: [AuthenticationGuard]
   }, 
-  {path: 'login' , component:LoginComponent },                                  //both admin + user
+  {path: 'login' , component:LoginComponent }, 
+  {path: 'ngrx' , component:NgrxpracComponent} ,                                //both admin + user
   {path: 'signup' , component:SignupComponent },                                   //both admin + user
   { path: 'profile/:id', component: EditProfileComponent },                         //both admin + user
   { path: 'course', component: CourseComponent ,canActivate: [AuthenticationGuard]},                                        //only admin

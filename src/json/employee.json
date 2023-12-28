@@ -77,9 +77,7 @@
       "gender": "male",
       "email": "abc@gmail.com",
       "education": "Database Management",
-      "phonenumber": 123456789,
-      "password": "abcd",
-      "profileImage": "./assets/img2.jpg",
+      "phonenumber": "9881082716",
       "isAdmin": false
     },
     {
