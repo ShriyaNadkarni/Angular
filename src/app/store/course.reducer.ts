@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Article } from 'src/module/article.model';
+import { Article } from '../model/article.model';
 import { ArticleAction, ArticleActionType } from './articles.actions';
 
 const initialState: Array<Article> = [

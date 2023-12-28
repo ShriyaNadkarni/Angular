@@ -42,7 +42,7 @@ const routes: Routes = [
     , canActivate: [AuthenticationGuard]
   }, 
   {path: 'login' , component:LoginComponent }, 
-  {path: 'ngrx' , component:NgrxpracComponent} ,                                //both admin + user
+  {path: 'ngrx' , component:NgrxpracComponent,canActivate: [AuthenticationGuard]} ,                                //both admin + user
   {path: 'signup' , component:SignupComponent },                                   //both admin + user
   { path: 'profile/:id', component: EditProfileComponent },                         //both admin + user
   { path: 'course', component: CourseComponent ,canActivate: [AuthenticationGuard]},                                        //only admin
