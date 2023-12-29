@@ -29,7 +29,7 @@ import { FormEventComponent } from './observables/form-event/form-event.componen
 import { GenderPipe } from './pipes/gender.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from 'src/material/material.module';
 import { ToastrModule } from 'ngx-toastr';
 import { UsersModule } from 'src/module/users.module';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
@@ -37,7 +37,7 @@ import { environment } from 'src/environments/environment';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
-import { reducers } from './model/state.model';
+import { reducers } from '../model/state.model';
 
 
 @NgModule({
