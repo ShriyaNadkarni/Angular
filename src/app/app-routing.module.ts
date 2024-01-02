@@ -18,7 +18,7 @@ import { LoginComponent } from './users/login/login.component';
 import { AuthenticationGuard } from 'src/Guards/authentication.guard';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 import { SignupComponent } from './users/signup/signup.component';
-import { NgrxpracComponent } from './ngrxprac/ngrxprac.component';
+import { NgrxpracComponent } from './ngPrac/ngrxprac/ngrxprac.component';
 
 
 
