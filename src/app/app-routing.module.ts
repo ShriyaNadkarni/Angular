@@ -19,6 +19,8 @@ import { AuthenticationGuard } from 'src/Guards/authentication.guard';
 import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
 import { SignupComponent } from './users/signup/signup.component';
 import { NgrxpracComponent } from './ngPrac/ngrxprac/ngrxprac.component';
+import { TodoComponent } from './ngPrac/todo/todo.component';
+import { ManagerComponent } from './manager/manager.component';
 
 
 
@@ -51,9 +53,11 @@ const routes: Routes = [
   { path: 'add-lang', component: AddLangComponent },                                   //only admin
   { path: 'employees', component: EmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
   { path: 'add-emp', component: AddEmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
+{path:'manager' , component:ManagerComponent},
   { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' }, //only admin
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
   { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },  
+  // {path: 'todo' , component: TodoComponent},
   { path: '**', component: NotfoundComponent }
 ];
 

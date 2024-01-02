@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Article } from '../../model/article.model';
+import { Article } from '../../../model/article.model';
 
 export enum ArticleActionType {
   ADD_ITEM = '[Article] Add Article',

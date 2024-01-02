@@ -16,7 +16,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 @NgModule({
   exports: [
     MatFormFieldModule,
@@ -34,6 +33,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     RouterModule,
     MatMenuModule,
     MatToolbarModule,
+    MatPaginatorModule,
     ReactiveFormsModule
   ]
 })

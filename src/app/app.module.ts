@@ -38,6 +38,8 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { reducers } from '../model/state.model';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 
 @NgModule({
@@ -78,6 +80,7 @@ import { reducers } from '../model/state.model';
     MaterialModule,
     RecaptchaV3Module,
     NgxCaptchaModule,
+    InfiniteScrollModule,
     ToastrModule.forRoot(),
     StoreModule.forRoot(reducers),
   ],

@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { State, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Article } from '../../../model/article.model';
-import { AddArticleAction } from '../../store/articles.actions';
+import { AddArticleAction } from '../../store/Actions/articles.actions';
 import { AppState } from '../../../model/state.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

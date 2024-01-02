@@ -1,6 +1,6 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { Article } from './article.model'
-import { ArticleReducer } from '../app/store/course.reducer';
+import { ArticleReducer } from '../app/store/Reducer/course.reducer';
 
 export interface AppState {
   readonly articles: Array<Article>; 
