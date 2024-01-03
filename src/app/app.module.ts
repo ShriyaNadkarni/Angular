@@ -41,6 +41,7 @@ import { reducers } from '../model/state.model';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -88,7 +89,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
     ToastrModule.forRoot(),
     StoreModule.forRoot(reducers),
   ],
-  providers: [MessageService, NumlistService, LserviceService, EmployeeService ,{
+  providers: [MessageService, NumlistService, LserviceService, EmployeeService, DatePipe ,{
     provide: RECAPTCHA_V3_SITE_KEY,
     useValue: environment.recaptchaSiteKey,
   },NgxSpinnerService],

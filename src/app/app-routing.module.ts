@@ -21,6 +21,7 @@ import { SignupComponent } from './users/signup/signup.component';
 import { NgrxpracComponent } from './ngPrac/ngrxprac/ngrxprac.component';
 import { TodoComponent } from './ngPrac/todo/todo.component';
 import { ManagerComponent } from './manager/manager.component';
+import { DateTimeComponent } from './date-time/date-time.component';
 
 
 
@@ -57,7 +58,8 @@ const routes: Routes = [
   { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' }, //only admin
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
   { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },  
-  // {path: 'todo' , component: TodoComponent},
+  //{path: 'todo' , component: TodoComponent},
+{path:'date' ,component:DateTimeComponent},
   { path: '**', component: NotfoundComponent }
 ];
 
