@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   exports: [
@@ -34,7 +35,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatMenuModule,
     MatToolbarModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule {

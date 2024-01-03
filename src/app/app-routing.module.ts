@@ -53,7 +53,7 @@ const routes: Routes = [
   { path: 'add-lang', component: AddLangComponent },                                   //only admin
   { path: 'employees', component: EmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
   { path: 'add-emp', component: AddEmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
-{path:'manager' , component:ManagerComponent},
+{path:'manager' , component:ManagerComponent , canActivate: [AuthenticationGuard]},
   { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' }, //only admin
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
   { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },  

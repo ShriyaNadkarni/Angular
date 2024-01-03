@@ -4,6 +4,7 @@
 
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -26,3 +27,8 @@
 .logout-button:hover {
   background-color: #c70000;
 } */
+
+.userMenu {
+  right: 0;
+  left: auto !important;
+}

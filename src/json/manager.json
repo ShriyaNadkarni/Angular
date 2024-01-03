@@ -1,0 +1,76 @@
+{
+    "Manager": [
+        {
+            "title": "Manager 1",
+            "subtitle": 1,
+            "imageSrc": "/assets/images/fmanager1.jpg",
+            "name": "Emily Thompson",
+            "jobTitle": "Front-End Manager",
+            "workExperience": "3"
+        },
+        {
+            "title": "Manager 2",
+            "subtitle": 2,
+            "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
+            "name": "Michael Williams",
+            "jobTitle": "Back-End Manager",
+            "workExperience": "4"
+        },
+        {
+            "title": "Manager 3",
+            "subtitle": 3,
+            "imageSrc": "/assets/img3.jpg",
+            "name": "Christopher Davis",
+            "jobTitle": "DataBase Manager",
+            "workExperience": "4"
+        },
+        {
+            "title": "Manager 4",
+            "subtitle": 4,
+            "imageSrc": "/assets/images/fmanager2.jpg",
+            "name": "Sarah Johnson",
+            "jobTitle": "DataBase Manager",
+            "workExperience": "3"
+        },
+        {
+            "title": "Manager 5",
+            "subtitle": 5,
+            "imageSrc": "/assets/img4.jpg",
+            "name": "Brian Taylor",
+            "jobTitle": "Front-End Manager",
+            "workExperience": "5"
+        },
+        {
+            "title": "Manager 6",
+            "subtitle": 6,
+            "imageSrc":"/assets/img2.jpg",
+            "name": "Lauren Rodriguez",
+            "jobTitle": "Back-End Manager",
+            "workExperience": "4"
+        },
+        {
+            "title": "Manager 7",
+            "subtitle": 7,
+            "imageSrc": "/assets/images/manager2.jpg",
+            "name": " Kevin Brown",
+            "jobTitle": "Back-End Manager",
+            "workExperience": "3"
+        },
+        {
+            "title": "Manager 8",
+            "subtitle": 8,
+            "imageSrc": "/assets/images/fmanager3.jpg",
+            "name": "Ashley Martinez",
+            "jobTitle": "Front-End Manager",
+            "workExperience": "4"
+        },
+        {
+            "title": "Manager 9",
+            "subtitle": 9,
+            "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
+            "name": "Jason Anderson",
+            "jobTitle": "Front-End Manager",
+            "workExperience": "3"
+        }
+    ]
+}

@@ -39,6 +39,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { reducers } from '../model/state.model';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 
 
@@ -81,13 +84,14 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RecaptchaV3Module,
     NgxCaptchaModule,
     InfiniteScrollModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot(),
     StoreModule.forRoot(reducers),
   ],
   providers: [MessageService, NumlistService, LserviceService, EmployeeService ,{
     provide: RECAPTCHA_V3_SITE_KEY,
     useValue: environment.recaptchaSiteKey,
-  },],
+  },NgxSpinnerService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
 })
