@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./date-time.component.css']
 })
 export class DateTimeComponent implements OnInit {
-  currentDateTime: string | any; // Store formatted date as a string
+  currentDateTime: string | any;
 
   constructor(private datePipe: DatePipe) {}
 
@@ -17,7 +17,7 @@ export class DateTimeComponent implements OnInit {
   }
 
   private updateDateTime() {
-    const now = new Date();
+    const now = new Date().toString();
     this.currentDateTime = this.datePipe.transform(now, 'medium');
   }
-}
+} 

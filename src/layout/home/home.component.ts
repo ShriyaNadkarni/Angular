@@ -6,6 +6,7 @@ import { Employee } from 'src/interface/employee';
 
 @Component({
   selector: 'app-home',
+
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

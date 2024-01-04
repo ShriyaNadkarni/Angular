@@ -42,6 +42,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DatePipe } from '@angular/common';
+import { DateTimeComponent } from './date-time/date-time.component';
 
 
 
@@ -69,7 +70,7 @@ import { DatePipe } from '@angular/common';
     FormEventComponent,
     GenderPipe,
     EditProfileComponent,
-  
+    DateTimeComponent
   ],
   imports: [
    

@@ -1,7 +1,8 @@
 cropper.js
-ngx-spinner
+ngx-spinner   --- doesn't work bcoz spinner version doesn't support angular cli 17
 infinite scrolling
 pagination
 recaptcha
 weather 
 chart.js , d3 , google charts 
+GraphQL
