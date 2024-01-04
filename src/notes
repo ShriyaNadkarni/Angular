@@ -1,6 +1,6 @@
 cropper.js
 ngx-spinner   --- doesn't work bcoz spinner version doesn't support angular cli 17
-infinite scrolling
+infinite scrolling  --- https://github.com/orizens/ngx-infinite-scroll
 pagination
 recaptcha
 weather 
