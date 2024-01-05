@@ -11,11 +11,22 @@ import { environment } from 'src/environments/environment';
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  private apiKey = environment.weatherapikey; 
-  private apiUrl = 'http://api.weatherstack.com/current'; 
+ 
+  private apiKey = environment.openweatherapi; 
+  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}'; 
 
-  getWeather(city: string): Observable<any> {
-    const url = `${this.apiUrl}?access_key=${this.apiKey}&query=${city}`;
-    return this.http.get(url);
+  getWeather(city: string){
+    const apiUrlWithApiKey = this.apiUrl.replace('{city name}', city).replace('{API key}', this.apiKey);
+
+    return this.http.get(apiUrlWithApiKey);
   }
+
+  
+getWeatherByLocation(latitude: number, longitude: number): Observable<any> {
+  const apiUrlWithApiKey = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}`;
+
+  return this.http.get(apiUrlWithApiKey);
+}
+
+
 }

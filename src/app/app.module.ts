@@ -43,6 +43,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DatePipe } from '@angular/common';
 import { DateTimeComponent } from './date-time/date-time.component';
+import { WeatherComponent } from './weather/weather.component';
 
 
 
@@ -70,7 +71,8 @@ import { DateTimeComponent } from './date-time/date-time.component';
     FormEventComponent,
     GenderPipe,
     EditProfileComponent,
-    DateTimeComponent
+    DateTimeComponent,
+    WeatherComponent
   ],
   imports: [
    
