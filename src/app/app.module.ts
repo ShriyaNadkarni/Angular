@@ -44,6 +44,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { DatePipe } from '@angular/common';
 import { DateTimeComponent } from './date-time/date-time.component';
 import { WeatherComponent } from './weather/weather.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PieComponent } from './charts/pie/pie.component';
 
 
 
@@ -72,7 +74,8 @@ import { WeatherComponent } from './weather/weather.component';
     GenderPipe,
     EditProfileComponent,
     DateTimeComponent,
-    WeatherComponent
+    WeatherComponent,
+    PieComponent
   ],
   imports: [
    
@@ -89,6 +92,7 @@ import { WeatherComponent } from './weather/weather.component';
     NgxCaptchaModule,
     InfiniteScrollModule,
     NgxSpinnerModule,
+    NgxChartsModule ,
     ToastrModule.forRoot(),
     StoreModule.forRoot(reducers),
   ],

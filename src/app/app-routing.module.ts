@@ -23,45 +23,48 @@ import { TodoComponent } from './ngPrac/todo/todo.component';
 import { ManagerComponent } from './manager/manager.component';
 import { DateTimeComponent } from './date-time/date-time.component';
 import { WeatherComponent } from './weather/weather.component';
+import { PieComponent } from './charts/pie/pie.component';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard]},     //both admin + user
+  { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard] },    
   {
-    path: 'department',                                                           //both admin + user
-    component: DepartmentComponent,                                         
+    path: 'department',                                                         
+    component: DepartmentComponent,
     children: [
       { path: 'it', component: ITComponent },
       { path: 'computer', component: ComputerComponent },
     ]
   },
-  { path: 'observable',                                                         //both admin + user
+  {
+    path: 'observable',                                                        
     component: ObservablesComponent,
     children: [
-      { path: 'list', component: AllComponent  },
+      { path: 'list', component: AllComponent },
       { path: 'formevent', component: FormEventComponent },
     ]
     , canActivate: [AuthenticationGuard]
-  }, 
-  {path: 'login' , component:LoginComponent }, 
-  {path: 'ngrx' , component:NgrxpracComponent,canActivate: [AuthenticationGuard]} ,                                //both admin + user
-  {path: 'signup' , component:SignupComponent },                                   //both admin + user
-  { path: 'profile/:id', component: EditProfileComponent },                         //both admin + user
-  { path: 'course', component: CourseComponent ,canActivate: [AuthenticationGuard]},                                        //only admin
-  { path: 'course/:id', component: CourseComponent, canActivate: [AuthenticationGuard] },                                   //only admin
-  { path: 'lang', component: LanguagesComponent },                                   //only admin
-  { path: 'add-lang', component: AddLangComponent },                                   //only admin
-  { path: 'employees', component: EmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
-  { path: 'add-emp', component: AddEmployeeComponent, canActivate: [AuthenticationGuard] }, //only admin
-{path:'manager' , component:ManagerComponent , canActivate: [AuthenticationGuard]},
-  { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' }, //only admin
-  { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },  
-  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },  
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'ngrx', component: NgrxpracComponent, canActivate: [AuthenticationGuard] },                                
+  { path: 'signup', component: SignupComponent },                                  
+  { path: 'profile/:id', component: EditProfileComponent },                         
+  { path: 'course', component: CourseComponent, canActivate: [AuthenticationGuard] },                                       
+  { path: 'course/:id', component: CourseComponent, canActivate: [AuthenticationGuard] },                                  
+  { path: 'lang', component: LanguagesComponent },                                   
+  { path: 'add-lang', component: AddLangComponent },                                  
+  { path: 'employees', component: EmployeeComponent, canActivate: [AuthenticationGuard] }, 
+  { path: 'add-emp', component: AddEmployeeComponent, canActivate: [AuthenticationGuard] }, 
+  { path: 'manager', component: ManagerComponent, canActivate: [AuthenticationGuard] },
+  { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' },
+  { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },
+  { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },
   //{path: 'todo' , component: TodoComponent},
-{path:'date' ,component:DateTimeComponent},
-{path:'weather' , component:WeatherComponent},
+  { path: 'education', component: PieComponent }, 
+  { path: 'date', component: DateTimeComponent },
+  { path: 'weather', component: WeatherComponent }, 
   { path: '**', component: NotfoundComponent }
 ];
 
@@ -89,3 +92,5 @@ export class AppRoutingModule {
 
 
 //"serve-json": "ng json-server --watch dbb.json --port 4000 --routes routes.json"
+//"json-server --watch src/json/employee.json --port 4000"
+

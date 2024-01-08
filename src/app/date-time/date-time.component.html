@@ -1,2 +1,10 @@
-<p>{{ currentDateTime  }}</p>
+
+<div class="clock">
+    <div class="hour" [style.transform]="getHourTransform()"></div>
+    <div class="minute" [style.transform]="getMinuteTransform()"></div>
+    <div class="second" [style.transform]="getSecondTransform()"></div>
+  </div>
+  <br>
+  <br>
+<p >{{ currentDateTime  }}</p>
 

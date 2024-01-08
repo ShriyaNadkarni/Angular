@@ -1,15 +1,9 @@
 <div class="style">
-  <h1>Weather</h1>
-  <!-- <form>
-    <button (click)="getWeatherByLocation()">Get Weather by Location</button>
-  </form> -->
-
-  <div *ngIf="weatherData">
-    <img *ngIf="weatherIconUrl" [src]="weatherIconUrl" alt="Weather Icon"  style="width: 200px; height: 200px;">
+  <div *ngIf="weatherData" class="weather">
+    <img *ngIf="weatherIconUrl" [src]="weatherIconUrl" alt="Weather Icon" style="width: 100px; height: 100px;">
     <h2>{{weatherData.name}}</h2>
-    <p>Temperature :  {{weatherData.main.temp}}</p><br>
-    <p>Humidity :  {{weatherData.main.humidity}}</p><br>
-    <p>Weather :  {{weatherData.weather[0].description}}</p><br>
-  
+    <p>Temperature : {{weatherData.main.temp}}</p><br>
+    <p>Humidity : {{weatherData.main.humidity}}</p><br>
+    <p>Weather : {{weatherData.weather[0].description}}</p><br>
   </div>
 </div>

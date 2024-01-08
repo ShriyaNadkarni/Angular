@@ -1,8 +1,16 @@
-.style{
-    background-color: blueviolet;
-}
-/* 
-image{
- height: 2400px;
- width: 2400px;   
-} */
+.style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:50%; 
+    background-color: rgba(164, 197, 216, 0.7); 
+    color: white;
+    background-image: url("./weatherback.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .weather {
+    text-align: center;
+  }
+  

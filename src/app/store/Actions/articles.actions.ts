@@ -11,3 +11,4 @@ export class AddArticleAction implements Action {
 }
 
 export type ArticleAction = AddArticleAction;
+
