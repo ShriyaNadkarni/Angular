@@ -43,8 +43,6 @@ export class EmployeeComponent implements OnInit {
     this.eservice.getDetails().subscribe((data) => {
       this.allEmployees = data;
       this.dataSource = new MatTableDataSource(this.allEmployees);
-  
-      // Initialize paginator after data is loaded
       this.dataSource.paginator = this.paginator;
       this.paginator.pageSizeOptions = [5, 10, 25, 100];
       this.paginator.pageSize = 5;

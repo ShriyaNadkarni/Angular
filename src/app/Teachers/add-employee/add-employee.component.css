@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(202, 164, 236);
+    background-color: rgb(168, 154, 180);
   }
   
   .form-container {
@@ -23,3 +23,10 @@
     margin-top: 20px;
   }
   
+
+
+  .form-container mat-toolbar-row {
+    background-color: #6486a1; 
+    color: white; 
+    padding: 10px; 
+  }

@@ -1,58 +1,63 @@
 <div class="form-container">
-    <form [formGroup]="EmployeeForm" (ngSubmit)="EmployeeForm.status !== 'INVALID' && updateEmployee()">
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Id :</mat-label>
-        <input matInput type="number" formControlName="id">
-      </mat-form-field><br>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Name :</mat-label>
-        <input matInput type="text" formControlName="name" placeholder="Enter Name">
-        <mat-error *ngIf="getControl('name')?.errors && getControl('name')?.touched">
-          <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
-          <small *ngIf="getControl('name')?.errors?.['minlength']">{{errors.error.valid_name}}</small>
-          <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_names}}</small>
-        </mat-error>
-      </mat-form-field><br>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Gender :</mat-label>
-        <input matInput type="text" formControlName="gender" placeholder="Enter Gender">
-        <mat-error *ngIf="getControl('gender')?.errors && getControl('gender')?.touched">
-          <small *ngIf="getControl('gender')?.errors?.['required']">{{errors.error.required}}</small>
-        </mat-error>
-      </mat-form-field><br>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Email :</mat-label>
-        <input matInput type="text" formControlName="email" placeholder="Enter Email">
-        <mat-error *ngIf="getControl('email')?.errors && getControl('email')?.touched">
-          <small *ngIf="getControl('email')?.errors?.['required']">{{errors.error.required}}</small>
-          <small *ngIf="getControl('email')?.errors?.['pattern']">{{errors.error.valid_email}}</small>
-        </mat-error>
-      </mat-form-field><br>
+  <mat-toolbar-row>
+    <h1>Edit User Details</h1>
+  </mat-toolbar-row>
+  <br>
+  <br>
+  <form [formGroup]="EmployeeForm" (ngSubmit)="EmployeeForm.status !== 'INVALID' && updateEmployee()">
 
-      <mat-checkbox formControlName="isAdmin"> Admin</mat-checkbox>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Education :</mat-label>
-        <input matInput type="text" formControlName="education" placeholder="Enter Education">
-        <mat-error *ngIf="getControl('education')?.errors && getControl('education')?.touched">
-          <small *ngIf="getControl('education')?.errors?.['required']">{{errors.error.required}}</small>
-        </mat-error>
-      </mat-form-field><br>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Phone.no :</mat-label>
-        <input matInput type="text" formControlName="phonenumber" placeholder="Enter Phone number">
-        <mat-error *ngIf="getControl('phonenumber')?.errors && getControl('phonenumber')?.touched">
-          <small *ngIf="getControl('phonenumber')?.errors?.['required']">{{errors.error.required}}</small>
-        </mat-error>
-      </mat-form-field><br>
-  
-      <button mat-raised-button color="primary" type="submit" [disabled]="EmployeeForm.status === 'INVALID'">Update</button>
-      <button mat-raised-button routerLink="/employees" routerLinkActive="active-link">Back</button>
-    </form>
-  </div>
-  
+    <mat-form-field appearance="fill">
+      <mat-label>Id :</mat-label>
+      <input matInput type="number" formControlName="id">
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name :</mat-label>
+      <input matInput type="text" formControlName="name" placeholder="Enter Name">
+      <mat-error *ngIf="getControl('name')?.errors && getControl('name')?.touched">
+        <small *ngIf="getControl('name')?.errors?.['required']">{{errors.error.required}}</small>
+        <small *ngIf="getControl('name')?.errors?.['minlength']">{{errors.error.valid_name}}</small>
+        <small *ngIf="getControl('name')?.errors?.['pattern']">{{errors.error.valid_names}}</small>
+      </mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Gender :</mat-label>
+      <input matInput type="text" formControlName="gender" placeholder="Enter Gender">
+      <mat-error *ngIf="getControl('gender')?.errors && getControl('gender')?.touched">
+        <small *ngIf="getControl('gender')?.errors?.['required']">{{errors.error.required}}</small>
+      </mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email :</mat-label>
+      <input matInput type="text" formControlName="email" placeholder="Enter Email">
+      <mat-error *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+        <small *ngIf="getControl('email')?.errors?.['required']">{{errors.error.required}}</small>
+        <small *ngIf="getControl('email')?.errors?.['pattern']">{{errors.error.valid_email}}</small>
+      </mat-error>
+    </mat-form-field><br>
+
+    <mat-checkbox formControlName="isAdmin"> Admin</mat-checkbox>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Education :</mat-label>
+      <input matInput type="text" formControlName="education" placeholder="Enter Education">
+      <mat-error *ngIf="getControl('education')?.errors && getControl('education')?.touched">
+        <small *ngIf="getControl('education')?.errors?.['required']">{{errors.error.required}}</small>
+      </mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone.no :</mat-label>
+      <input matInput type="text" formControlName="phonenumber" placeholder="Enter Phone number">
+      <mat-error *ngIf="getControl('phonenumber')?.errors && getControl('phonenumber')?.touched">
+        <small *ngIf="getControl('phonenumber')?.errors?.['required']">{{errors.error.required}}</small>
+      </mat-error>
+    </mat-form-field><br>
+
+    <button mat-raised-button color="primary" type="submit"
+      [disabled]="EmployeeForm.status === 'INVALID'">Update</button>
+    <button mat-raised-button routerLink="/employees" routerLinkActive="active-link">Back</button>
+  </form>
+</div>

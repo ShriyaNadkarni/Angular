@@ -1,4 +1,9 @@
 <div class="form-container">
+  <mat-toolbar-row>
+    <h1>Add new User</h1>
+    </mat-toolbar-row>
+    <br>
+    <br>
     <form [formGroup]="EmployeeForm" (ngSubmit)="EmployeeForm.status !== 'INVALID' && postData(EmployeeForm)">
       <mat-form-field appearance="fill">
         <mat-label>Id :</mat-label>

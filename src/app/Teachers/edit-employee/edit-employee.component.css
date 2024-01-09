@@ -1,26 +1,32 @@
 .form-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #fff;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  button {
-    margin-top: 16px;
-  }
-  
-  .error-message {
-    color: red;
-  }
-  
-  .mat-raised-button {
-    margin-right: 8px;
-  }
-  
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button {
+  margin-top: 16px;
+}
+
+.error-message {
+  color: red;
+}
+
+.mat-raised-button {
+  margin-right: 8px;
+}
+
+
+.form-container mat-toolbar-row {
+  background-color: #6486a1;
+  color: white;
+  padding: 10px;
+}
