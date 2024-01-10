@@ -21,6 +21,7 @@ export class AddEmployeeComponent {
   education: string = "";
   phonenumber: string = "";
   email: string = "";
+  status:string = "";
   errors = errors;
 
 
@@ -31,7 +32,9 @@ export class AddEmployeeComponent {
       gender: new FormControl('', [Validators.required]),
       education: new FormControl('', [Validators.required]),
       phonenumber: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      status: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     })
   }
 

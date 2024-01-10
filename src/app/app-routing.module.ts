@@ -24,6 +24,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { DateTimeComponent } from './date-time/date-time.component';
 import { WeatherComponent } from './weather/weather.component';
 import { PieComponent } from './charts/pie/pie.component';
+import { EmployeeDetailsComponent } from './ngPrac/employee-details/employee-details.component';
 
 
 
@@ -61,10 +62,10 @@ const routes: Routes = [
   { path: 'employees/:id/edit', component: EditEmployeeComponent, canActivate: [AuthenticationGuard], title: 'Employee Edit' },
   { path: 'students', loadChildren: () => import('../module/student.module').then(mod => mod.StudentModule) },
   { path: 'users', loadChildren: () => import('../module/users.module').then(m => m.UsersModule) },
-  //{path: 'todo' , component: TodoComponent},
-  { path: 'education', component: PieComponent }, 
-  { path: 'date', component: DateTimeComponent },
-  { path: 'weather', component: WeatherComponent }, 
+  { path: 'education', component: PieComponent ,canActivate: [AuthenticationGuard]}, 
+  { path: 'date', component: DateTimeComponent ,canActivate: [AuthenticationGuard]},
+  { path: 'weather', component: WeatherComponent,canActivate: [AuthenticationGuard] }, 
+  {path: 'state' , component:EmployeeDetailsComponent,canActivate: [AuthenticationGuard]},
   { path: '**', component: NotfoundComponent }
 ];
 

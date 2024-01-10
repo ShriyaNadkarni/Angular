@@ -1,5 +1,5 @@
+
 export interface Employee {
-    filter(arg0: (emp: any) => any): any;
     id: number;
     name: string;
     gender: string;
@@ -9,6 +9,6 @@ export interface Employee {
     phonenumber: number;
     password: string;
     status: 'Onboarding' | 'Active' | 'Leave of Absence' | 'Resigned' | 'Terminated';
-    Image:string;
-    isAdmin?: boolean;
-}
+    Image: string;
+  }
+  

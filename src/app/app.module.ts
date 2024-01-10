@@ -46,6 +46,9 @@ import { DateTimeComponent } from './date-time/date-time.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieComponent } from './charts/pie/pie.component';
+import { EmployeeDetailsComponent } from './ngPrac/employee-details/employee-details.component';
+import { EmployeeEffects } from './store/employee.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -75,7 +78,8 @@ import { PieComponent } from './charts/pie/pie.component';
     EditProfileComponent,
     DateTimeComponent,
     WeatherComponent,
-    PieComponent
+    PieComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
    
@@ -95,6 +99,7 @@ import { PieComponent } from './charts/pie/pie.component';
     NgxChartsModule ,
     ToastrModule.forRoot(),
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([EmployeeEffects]),
   ],
   providers: [MessageService, NumlistService, LserviceService, EmployeeService, DatePipe ,{
     provide: RECAPTCHA_V3_SITE_KEY,

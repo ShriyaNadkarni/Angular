@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../interface/employee';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { apiUrls } from 'apis/apis';
 import { Router } from '@angular/router';
 
@@ -16,6 +16,7 @@ export class EmployeeService {
   constructor(private http:HttpClient,private router:Router) { }
  
   baseUrl:any ="http://localhost:4000"
+  apiUrls = "http://localhost:4000/employees"
 
   getDetails():Observable<Employee[]>{
     return this.http.get<Employee[]>(this.baseUrl + apiUrls.employee.emp_list)
@@ -40,7 +41,23 @@ export class EmployeeService {
   getEmployeesByGender(): Observable<Employee[]> {
     return this.http.get<Employee[]>(`${this.baseUrl + apiUrls.employee.emp_list}`);
   }
-    
+
+
+
+getEmployeeStatusById(id: number): Observable<"Onboarding" | "Active" | "Leave of Absence" | "Resigned" | "Terminated"> {
+  const url = `${this.baseUrl}${apiUrls.employee.emp_list}/${id}`;
+  return this.http.get<Employee>(url)
+    .pipe(
+      map((employeeData: Employee) => employeeData.status as "Onboarding" | "Active" | "Leave of Absence" | "Resigned" | "Terminated")
+    );
+}
+
+updateEmployeeStatus(employeeId: number, newStatus: string): Observable<any> {
+  const url = `http://localhost:4000/employees/${employeeId}`;
+  const data = { status: newStatus };
+  return this.http.patch(url, data);
+}
+
 }
 
 

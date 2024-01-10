@@ -1,11 +1,16 @@
+// state.model.ts
+
 import { ActionReducerMap } from '@ngrx/store';
-import { Article } from './article.model'
-import { ArticleReducer } from '../app/store/Reducer/course.reducer';
+import { Article } from './article.model';
+import { EmployeeState , employeeReducer } from 'src/app/store/Reducer/employee.reducer';
+import { ArticleReducer } from 'src/app/store/Reducer/course.reducer';
 
 export interface AppState {
-  readonly articles: Array<Article>; 
+  readonly articles: Article[];
+  employees: EmployeeState; 
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   articles: ArticleReducer,
+  employees: employeeReducer,
 };

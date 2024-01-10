@@ -4,20 +4,22 @@
       "id": 1,
       "name": "Alice",
       "gender": "Female",
-      "email": "abc@gmail.com",
+      "email": "alice@gmail.com",
       "education": "Backenddeveloper",
       "phonenumber": 123456789,
       "password": "abcd",
+      "status": "Onboarding",
       "isAdmin": true
     },
     {
       "id": 2,
       "name": "Shriya Nadkarni",
       "gender": "Female",
-      "email": "abc@gmail.com",
+      "email": "shri@gmail.com",
       "education": "Backend Developer",
       "phonenumber": "1234",
       "password": "abcd",
+      "status": "Resigned",
       "isAdmin": true
     },
     {
@@ -26,58 +28,64 @@
       "gender": "Male",
       "education": "Full stack Developer",
       "phonenumber": 123456789,
-      "email": "abc@gmail.com",
+      "email": "dada@gmail.com",
       "password": "abcd",
+      "status": "Onboarding",
       "isAdmin": false
     },
     {
       "id": 4,
       "name": "Ruby Nadkarni",
       "gender": "Female",
-      "email": "abc@gmail.com",
+      "email": "mimi@gmail.com",
       "education": "Database Management",
       "phonenumber": 123456789,
       "password": "abcd",
+      "status": "Leave of Absence",
       "isAdmin": false
     },
     {
       "id": 5,
       "name": "Mangirish Nadkarni",
       "gender": "Male",
-      "email": "abc@gmail.com",
+      "email": "papa@gmail.com",
       "education": "UI/UX",
       "phonenumber": 123456789,
       "password": "abcd",
       "profileImage": "./assets/img2.jpg",
+      "status": "Onboarding",
       "isAdmin": false
     },
     {
       "id": 6,
       "name": "Tom",
       "gender": "Female",
-      "email": "abc@gmail.com",
+      "email": "tom@gmail.com",
       "education": "Frontend Developer",
       "phonenumber": 123456789,
+      "status": "Active",
       "isAdmin": false
     },
     {
       "id": 7,
       "name": "Krishna",
       "gender": "male",
-      "email": "abc@gmail.com",
+      "email": "krishna@gmail.com",
       "education": "Backend Developer",
       "phonenumber": 123456789,
       "password": "abcd",
       "profileImage": "./assets/img2.jpg",
+      "status": "Active",
       "isAdmin": false
     },
     {
       "id": 8,
       "name": "Girish Nadkarni",
       "gender": "male",
-      "email": "abc@gmail.com",
+      "email": "girish@gmail.com",
       "education": "Database Management",
       "phonenumber": "9881082716",
+      "status": "Resigned",
       "isAdmin": false
     },
     {
@@ -88,6 +96,7 @@
       "education": "Full stack Developer",
       "phonenumber": "123489",
       "password": "abcd",
+      "status": "Leave of Absence",
       "profileImage": "./assets/img2.jpg",
       "isAdmin": false
     },
@@ -99,6 +108,7 @@
       "education": "DatabaseManagement",
       "phonenumber": "12345677",
       "password": "qwerty",
+      "status": "Leave of Absence",
       "Image": "./assets/img3.jpg",
       "isAdmin": false
     },
@@ -110,6 +120,7 @@
       "education": "Database Management",
       "phonenumber": "123456789",
       "password": "admin",
+      "status": "Active",
       "Image": "./assets/img3.jpg",
       "isAdmin": true
     },
@@ -120,82 +131,83 @@
       "gender": "male",
       "email": "krish@gmail.com",
       "password": "krish",
+      "status": "Active",
       "isAdmin": true,
       "id": 12
     }
   ],
   "Manager": [
     {
-        "title": "Manager 1",
-        "subtitle": 1,
-        "imageSrc": "/assets/images/fmanager1.jpg",
-        "name": "Emily Thompson",
-        "jobTitle": "Front-End Manager",
-        "workExperience": 3
+      "title": "Manager 1",
+      "subtitle": 1,
+      "imageSrc": "/assets/images/fmanager1.jpg",
+      "name": "Emily Thompson",
+      "jobTitle": "Front-End Manager",
+      "workExperience": 3
     },
     {
-        "title": "Manager 2",
-        "subtitle": 2,
-        "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
-        "name": "Michael Williams",
-        "jobTitle": "Back-End Manager",
-        "workExperience": 4
+      "title": "Manager 2",
+      "subtitle": 2,
+      "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
+      "name": "Michael Williams",
+      "jobTitle": "Back-End Manager",
+      "workExperience": 4
     },
     {
-        "title": "Manager 3",
-        "subtitle": 3,
-        "imageSrc": "/assets/img3.jpg",
-        "name": "Christopher Davis",
-        "jobTitle": "DataBase Manager",
-        "workExperience": 4
+      "title": "Manager 3",
+      "subtitle": 3,
+      "imageSrc": "/assets/img3.jpg",
+      "name": "Christopher Davis",
+      "jobTitle": "DataBase Manager",
+      "workExperience": 4
     },
     {
-        "title": "Manager 4",
-        "subtitle": 4,
-        "imageSrc": "/assets/images/fmanager2.jpg",
-        "name": "Sarah Johnson",
-        "jobTitle": "DataBase Manager",
-        "workExperience": 3
+      "title": "Manager 4",
+      "subtitle": 4,
+      "imageSrc": "/assets/images/fmanager2.jpg",
+      "name": "Sarah Johnson",
+      "jobTitle": "DataBase Manager",
+      "workExperience": 3
     },
     {
-        "title": "Manager 5",
-        "subtitle": 5,
-        "imageSrc": "/assets/img4.jpg",
-        "name": "Brian Taylor",
-        "jobTitle": "Front-End Manager",
-        "workExperience": 5
+      "title": "Manager 5",
+      "subtitle": 5,
+      "imageSrc": "/assets/img4.jpg",
+      "name": "Brian Taylor",
+      "jobTitle": "Front-End Manager",
+      "workExperience": 5
     },
     {
-        "title": "Manager 6",
-        "subtitle": 6,
-        "imageSrc":"/assets/img2.jpg",
-        "name": "Lauren Rodriguez",
-        "jobTitle": "Back-End Manager",
-        "workExperience": 4
+      "title": "Manager 6",
+      "subtitle": 6,
+      "imageSrc": "/assets/img2.jpg",
+      "name": "Lauren Rodriguez",
+      "jobTitle": "Back-End Manager",
+      "workExperience": 4
     },
     {
-        "title": "Manager 7",
-        "subtitle": 7,
-        "imageSrc": "/assets/images/manager2.jpg",
-        "name": " Kevin Brown",
-        "jobTitle": "Back-End Manager",
-        "workExperience": 3
+      "title": "Manager 7",
+      "subtitle": 7,
+      "imageSrc": "/assets/images/manager2.jpg",
+      "name": " Kevin Brown",
+      "jobTitle": "Back-End Manager",
+      "workExperience": 3
     },
     {
-        "title": "Manager 8",
-        "subtitle": 8,
-        "imageSrc": "/assets/images/fmanager3.jpg",
-        "name": "Ashley Martinez",
-        "jobTitle": "Front-End Manager",
-        "workExperience": 4
+      "title": "Manager 8",
+      "subtitle": 8,
+      "imageSrc": "/assets/images/fmanager3.jpg",
+      "name": "Ashley Martinez",
+      "jobTitle": "Front-End Manager",
+      "workExperience": 4
     },
     {
-        "title": "Manager 9",
-        "subtitle": 9,
-        "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
-        "name": "Jason Anderson",
-        "jobTitle": "Front-End Manager",
-        "workExperience": 3
+      "title": "Manager 9",
+      "subtitle": 9,
+      "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
+      "name": "Jason Anderson",
+      "jobTitle": "Front-End Manager",
+      "workExperience": 3
     },
     {
       "title": "Manager 1",
@@ -204,38 +216,38 @@
       "name": "Emily Thompson",
       "jobTitle": "Front-End Manager",
       "workExperience": 3
-  },
-  {
+    },
+    {
       "title": "Manager 2",
       "subtitle": 2,
       "imageSrc": "/assets/images/head-shot-smiling-confident-young-ceo-executive-male-manager-employee-worker-businessman-in-eyewear-posing-in-modern-office-room-professional-profile-photo-video-call-virtual-me.jpg",
       "name": "Michael Williams",
       "jobTitle": "Back-End Manager",
       "workExperience": 4
-  },
-  {
+    },
+    {
       "title": "Manager 3",
       "subtitle": 3,
       "imageSrc": "/assets/img3.jpg",
       "name": "Christopher Davis",
       "jobTitle": "DataBase Manager",
       "workExperience": 4
-  },
-  {
+    },
+    {
       "title": "Manager 4",
       "subtitle": 4,
       "imageSrc": "/assets/images/fmanager2.jpg",
       "name": "Sarah Johnson",
       "jobTitle": "DataBase Manager",
       "workExperience": 3
-  },
-  {
+    },
+    {
       "title": "Manager 5",
       "subtitle": 5,
       "imageSrc": "/assets/img4.jpg",
       "name": "Brian Taylor",
       "jobTitle": "Front-End Manager",
       "workExperience": 5
-  }
-]
+    }
+  ]
 }
