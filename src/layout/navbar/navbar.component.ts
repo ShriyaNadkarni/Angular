@@ -24,53 +24,8 @@ export class NavbarComponent implements OnInit {
   ) {}
 
 
-  
-  // private dialog :ConfirmationDialogComponent
-
-  // ngOnInit(): void {
-  //   this.route.params.subscribe(params => {
-  //     this.userId = +params['id'];
-  
-     
-     
-     
-     
-  //     if (isNaN(this.userId)) {
-  //       console.log('UserID from route params:', this.userId);
-  //       this.employeeService.getEmployeeImageById(this.userId).subscribe(
-  //         (image: string) => {
-  //           this.employeeImage = image;
-  //           console.log('Employee Image:', this.employeeImage);
-  //         },
-  //         (error) => {
-  //           console.error('Error fetching employee image:', error);
-  //         }
-  //       );
-  //     }
-  //   });
-  // }
-
   ngOnInit(): void {
-    // this.route.params.subscribe(params => {
-    //   this.userId = +params['id'];
-  
-    //   if (!isNaN(this.userId) && this.userId !== null && this.userId !== undefined) {
-    //     this.employeeService.getEmployeeImageById(this.userId).subscribe(
-    //       (image: string) => {
-    //         this.employeeImage = image;
-    //         console.log('Employee Image:', this.employeeImage);
-    //       },
-    //       (error) => {
-    //         console.error('Error fetching employee image:', error);
-    //       }
-    //     );
-    //   } else {
-    //     console.error('Invalid user ID:', params['id']);
-    //   }
-    // });
-
-
-
+   
     this.route.queryParams.subscribe(params => {
       this.userId = +params['id'];
       if (!isNaN(this.userId) && this.userId !== null && this.userId !== undefined) {
@@ -111,19 +66,3 @@ export class NavbarComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-// ngOnInit(): void {
-//   if (this.userId) {
-//     const user = this.authService.getUserDetails();
-//     if (user) {
-//       this.employeeData.push(user);
-//       console.log('Employee Image:', user.Image);
-//     }
-//   } 
-// }
