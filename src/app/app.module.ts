@@ -2,7 +2,6 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from '../layout/navbar/navbar.component';
 import { HomeComponent } from '../layout/home/home.component';
 import { NotfoundComponent } from '../layout/notfound/notfound.component';
 import { DepartmentComponent } from './department/department.component';
@@ -49,6 +48,8 @@ import { PieComponent } from './charts/pie/pie.component';
 import { EmployeeDetailsComponent } from './ngPrac/employee-details/employee-details.component';
 import { EmployeeEffects } from './store/employee.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { NavbarComponent } from '../layout/navbar/navbar.component';
+import { NgrxpracComponent } from './ngPrac/ngrxprac/ngrxprac.component';
 
 
 
@@ -79,7 +80,8 @@ import { EffectsModule } from '@ngrx/effects';
     DateTimeComponent,
     WeatherComponent,
     PieComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    NgrxpracComponent
   ],
   imports: [
    

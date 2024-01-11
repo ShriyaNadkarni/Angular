@@ -12,6 +12,7 @@ export class AuthenticationService extends EmployeeService {
   private authenticatedUser: Employee | null = null;
   private isAuthenticated = false;
   private isAdmin = false;
+  private userIds: string | null = null;
 
   getEmployeeDataByGender(gender: string): Observable<Employee[]> {
     return super.getEmployeesByGender();
@@ -104,5 +105,8 @@ export class AuthenticationService extends EmployeeService {
 
 
 
+  getUserId(): string | null {
+    return this.userIds;
+  }
 
 }

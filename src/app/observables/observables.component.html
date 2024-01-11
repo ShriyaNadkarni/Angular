@@ -14,7 +14,9 @@ observables Handle(subscribe)
     (error)=> console.log(error),  ---can handle error
     ()=> console.log("complete")    ---can handle completion 
     ) -->
-<div class="my-3">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet> 
+    <div class="my-3">
     <router-outlet></router-outlet>
     <br>
 </div>

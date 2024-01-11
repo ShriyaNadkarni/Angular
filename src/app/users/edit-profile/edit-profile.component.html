@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
 <div class="style">
     <mat-card>
       <mat-card-header>
@@ -10,6 +12,7 @@
             <img [src]="EditForm.get('Image').value ? EditForm.get('Image').value : url" height="200" />
             <mat-icon (click)="fileInput.click()">edit</mat-icon>
           </label>
+          
           
           
 <br>

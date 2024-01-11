@@ -9,7 +9,7 @@ export class ConfirmationDialogComponent {
   @Input() message: string = 'Are you sure?';
   @Output() confirmed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  isOpen: boolean = false; // Add this property
+  isOpen: boolean = false; 
 
   open() {
     this.isOpen = true;

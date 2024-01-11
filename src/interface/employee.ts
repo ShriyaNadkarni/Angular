@@ -12,3 +12,4 @@ export interface Employee {
     Image:string;
     isAdmin?: boolean;
 }
+

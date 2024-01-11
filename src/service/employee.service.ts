@@ -52,11 +52,25 @@ getEmployeeStatusById(id: number): Observable<"Onboarding" | "Active" | "Leave o
     );
 }
 
+getEmployeeImageById(id: number): Observable<string> {
+  const url = `${this.baseUrl}${apiUrls.employee.emp_list}/${id}`;
+  return this.http.get<Employee>(url)
+    .pipe(
+      map((employeeData: Employee) => employeeData.Image )
+    );
+}
+
+
+
 updateEmployeeStatus(employeeId: number, newStatus: string): Observable<any> {
   const url = `http://localhost:4000/employees/${employeeId}`;
   const data = { status: newStatus };
   return this.http.patch(url, data);
 }
+
+
+
+
 
 }
 

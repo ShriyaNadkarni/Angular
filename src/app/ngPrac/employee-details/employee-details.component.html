@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet> 
 <div *ngIf="employees$ | async as employees; else loading">
 
   <mat-table [dataSource]="dataSource" matSort matPaginator>

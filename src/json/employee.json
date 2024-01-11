@@ -9,7 +9,8 @@
       "phonenumber": 123456789,
       "password": "abcd",
       "status": "Onboarding",
-      "isAdmin": true
+      "isAdmin": true,
+      "Image": "./assets/img3.jpg"
     },
     {
       "id": 2,
@@ -17,6 +18,7 @@
       "gender": "Female",
       "email": "shri@gmail.com",
       "education": "Backend Developer",
+      "Image": "./assets/img2.jpg",
       "phonenumber": "1234",
       "password": "abcd",
       "status": "Resigned",
@@ -31,7 +33,8 @@
       "email": "dada@gmail.com",
       "password": "abcd",
       "status": "Onboarding",
-      "isAdmin": false
+      "isAdmin": false,
+      "Image": "./assets/img2.jpg"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "phonenumber": 123456789,
       "password": "abcd",
       "status": "Leave of Absence",
-      "isAdmin": false
+      "isAdmin": false,
+      "Image": "./assets/img3.jpg"
     },
     {
       "id": 5,
@@ -52,7 +56,7 @@
       "education": "UI/UX",
       "phonenumber": 123456789,
       "password": "abcd",
-      "profileImage": "./assets/img2.jpg",
+      "Image": "./assets/img2.jpg",
       "status": "Onboarding",
       "isAdmin": false
     },
@@ -64,7 +68,8 @@
       "education": "Frontend Developer",
       "phonenumber": 123456789,
       "status": "Active",
-      "isAdmin": false
+      "isAdmin": false,
+      "Image": "./assets/img3.jpg"
     },
     {
       "id": 7,
@@ -76,7 +81,8 @@
       "password": "abcd",
       "profileImage": "./assets/img2.jpg",
       "status": "Active",
-      "isAdmin": false
+      "isAdmin": false,
+      "Image": "./assets/img3.jpg"
     },
     {
       "id": 8,
@@ -86,7 +92,8 @@
       "education": "Database Management",
       "phonenumber": "9881082716",
       "status": "Resigned",
-      "isAdmin": false
+      "isAdmin": false,
+      "Image": "./assets/img3.jpg"
     },
     {
       "id": 9,
@@ -97,7 +104,7 @@
       "phonenumber": "123489",
       "password": "abcd",
       "status": "Leave of Absence",
-      "profileImage": "./assets/img2.jpg",
+      "Image": "./assets/img2.jpg",
       "isAdmin": false
     },
     {
@@ -133,6 +140,7 @@
       "password": "krish",
       "status": "Active",
       "isAdmin": true,
+      "Image": "./assets/img2.jpg",
       "id": 12
     }
   ],

@@ -41,7 +41,7 @@ export class EditProfileComponent implements OnInit {
       education: new FormControl(this.Data?.education, Validators.required),
       phonenumber: new FormControl(this.Data?.phonenumber, Validators.required),
       password: new FormControl(this.Data?.password, [Validators.required, Validators.maxLength(10)]),
-      Image: new FormControl(this.Data?.Image), // Add this line
+      Image: new FormControl(this.Data?.Image),
     });
   }
   

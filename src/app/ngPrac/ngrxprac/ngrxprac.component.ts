@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ngrxprac',
-  standalone: true,
-  imports: [CommonModule , FormsModule],
+  // standalone: true,
+ // imports: [CommonModule , FormsModule],
   templateUrl: './ngrxprac.component.html',
   styleUrl: './ngrxprac.component.css'
 })

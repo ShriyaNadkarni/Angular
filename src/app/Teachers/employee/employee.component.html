@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet> 
 <h2>CRUD Operation</h2>
 
 <br>
@@ -6,9 +8,7 @@
   <input matInput [(ngModel)]="filterData" placeholder="Enter criteria to search...">
 </mat-form-field>
 <button mat-raised-button color="primary" (click)="filteredResult()" class="filterbutton">Filter</button>
-<!-- <div *ngIf="dataSource.data.length === 0">
-  <app-notfound></app-notfound>
-</div> -->
+
 
 <a mat-button [routerLink]="['/add-emp']" routerLinkActive="active-link" class="add-button">
   <mat-icon>add</mat-icon>
